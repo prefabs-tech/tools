@@ -1,4 +1,4 @@
-# @12degrees/tools
+# @12deg/tools
 
 ## Packages
 

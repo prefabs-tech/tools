@@ -1,11 +1,11 @@
-# @12degrees/eslint-config
+# @12deg/eslint-config
 Custom ESLint configuration for streamlined linting across projects.
 
 ## Install
 Install the required dependencies:
 
 ```sh
-$ npm i -D @12degrees/eslint-config eslint prettier typescript
+$ npm i -D @12deg/eslint-config eslint prettier typescript
 ```
 
 ## Usage

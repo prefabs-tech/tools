@@ -75,8 +75,6 @@ importers:
 
   packages/tsconfig: {}
 
-  packages/tsconfig: {}
-
 packages:
 
   '@babel/code-frame@7.24.7':
