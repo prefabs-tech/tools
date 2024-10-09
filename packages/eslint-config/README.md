@@ -14,7 +14,7 @@ In the root directory of your app or package, create a `.eslintrc.js` file:
 ```ts
 module.exports = {
   root: true,
-  extends: ["@12degrees/eslint-config"],
+  extends: ["@12deg/eslint-config"],
 };
 ```
 

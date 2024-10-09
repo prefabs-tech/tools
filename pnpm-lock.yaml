@@ -73,6 +73,8 @@ importers:
         specifier: 4.9.5
         version: 4.9.5
 
+  packages/tsconfig: {}
+
 packages:
 
   '@babel/code-frame@7.24.7':

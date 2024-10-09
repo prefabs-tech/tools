@@ -13,7 +13,7 @@ In the root directory of your project, create or update a tsconfig.json file to 
 
 ```json
 {
-  "extends": "@12degrees/tsconfig",
+  "extends": "@12deg/tsconfig",
   // add custom options here if needed
 }
 ```
