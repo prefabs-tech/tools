@@ -1,5 +1,5 @@
 module.exports = {
-  appName: "@12degrees/tools",
+  appName: "@12deg/tools",
   buildCommand: ({ isYarn, version }) => {
     return "pnpm build";
   },
