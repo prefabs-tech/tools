@@ -11,7 +11,8 @@
   "license": "MIT",
   "main": "index.js",
   "files": [
-    "index.js"
+    "index.js",
+    "react.js"
   ],
   "scripts": {
     "sort-package": "npx sort-package-json"
