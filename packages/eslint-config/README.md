@@ -1,6 +1,11 @@
 # @12deg/eslint-config
 Custom ESLint configuration for streamlined linting across projects.
 
+## Supported configurations:
+- `@12deg/eslint-config` for general typescript projects
+- `@12deg/eslint-config/react` for react projects
+
+
 ## Install
 Install the required dependencies:
 
@@ -11,12 +16,21 @@ $ npm i -D @12deg/eslint-config eslint prettier typescript
 ## Usage
 In the root directory of your app or package, create a `.eslintrc.js` file:
 
-```ts
-module.exports = {
-  root: true,
-  extends: ["@12deg/eslint-config"],
-};
-```
+* For general typescript projects:
+  ```js
+  module.exports = {
+    root: true,
+    extends: ["@12deg/eslint-config"],
+  };
+  ```
+
+* For react projects:
+  ```js
+  module.exports = {
+    root: true,
+    extends: ["@12deg/eslint-config/react"],
+  };
+  ```
 
 ## Adding linting scripts
 In your `package.json`, add the following commands to the `scripts` section:
