@@ -10,11 +10,6 @@ Install dependencies recursively with this command
 make install
 ```
 
-### Build all packages
-```bash
-make build
-```
-
 ### Lint code
 ```bash
 make lint
