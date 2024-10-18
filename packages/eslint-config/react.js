@@ -40,6 +40,22 @@ module.exports = {
     ],
     "no-console": process.env.NODE_ENV === "production" ? "error" : "warn",
     "no-debugger": process.env.NODE_ENV === "production" ? "error" : "warn",
+    "no-unused-expressions": "off",
+    "@typescript-eslint/no-unused-expressions": [
+      "error",
+      {
+        allowShortCircuit: true,
+        allowTernary: true,
+        allowTaggedTemplates: true,
+      },
+    ],
+    "@typescript-eslint/no-unused-vars": [
+      "warn",
+      {
+        args: "none",
+        ignoreRestSiblings: true,
+      },
+    ],
     "prettier/prettier": "error",
     "unicorn/filename-case": [
       "error",
