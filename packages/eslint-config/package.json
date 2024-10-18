@@ -12,7 +12,8 @@
   "main": "index.js",
   "files": [
     "index.js",
-    "react.js"
+    "react.js",
+    "vue.js"
   ],
   "scripts": {
     "sort-package": "npx sort-package-json"
