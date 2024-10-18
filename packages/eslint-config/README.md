@@ -4,6 +4,7 @@ Custom ESLint configuration for streamlined linting across projects.
 ## Supported configurations:
 - `@12deg/eslint-config` for general typescript projects
 - `@12deg/eslint-config/react` for react projects
+- `@12deg/eslint-config/vue` for vue projects
 
 
 ## Install
@@ -32,13 +33,28 @@ In the root directory of your app or package, create a `.eslintrc.js` file:
   };
   ```
 
+* For vue projects:
+  ```js
+  module.exports = {
+    root: true,
+    extends: ["@12deg/eslint-config/vue"],
+  };
+  ```
+
 ## Adding linting scripts
 In your `package.json`, add the following commands to the `scripts` section:
 
-```json
-"lint": "eslint . --ext .js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --ignore-path .gitignore",
-"lint:fix": "eslint . --ext .js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore"
-```
+* For typeScript or react projects:
+  ```json
+  "lint": "eslint . --ext .js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --ignore-path .gitignore",
+  "lint:fix": "eslint . --ext .js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore"
+  ```
+
+* For Vue projects (including .vue files):
+  ```json
+  "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --ignore-path .gitignore",
+  "lint:fix": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
+  ```
 
 ## Running linting
 Run the following command to lint your code:
