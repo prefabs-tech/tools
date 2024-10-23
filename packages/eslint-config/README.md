@@ -3,8 +3,8 @@ Custom ESLint configuration for streamlined linting across projects.
 
 ## Supported configurations:
 - `@12deg/eslint-config` for general typescript projects
-- `@12deg/eslint-config/react` for react projects
-
+- `@12deg/eslint-config/react` for react libraries
+- `@12deg/eslint-config/react-app` for react apps
 
 ## Install
 Install the required dependencies:
@@ -24,7 +24,7 @@ In the root directory of your app or package, create a `.eslintrc.js` file:
   };
   ```
 
-* For react projects:
+* For react libraires:
   ```js
   module.exports = {
     root: true,
@@ -32,12 +32,20 @@ In the root directory of your app or package, create a `.eslintrc.js` file:
   };
   ```
 
+* For react apps:
+  ```js
+  module.exports = {
+    root: true,
+    extends: ["@12deg/eslint-config/react-app"],
+  };
+  ```
+
 ## Adding linting scripts
 In your `package.json`, add the following commands to the `scripts` section:
 
 ```json
-"lint": "eslint . --ext .js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --ignore-path .gitignore",
-"lint:fix": "eslint . --ext .js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore"
+"lint": "eslint .",
+"lint:fix": "eslint . --fix"
 ```
 
 ## Running linting
