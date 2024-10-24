@@ -12,7 +12,8 @@
   "main": "index.js",
   "files": [
     "index.js",
-    "react.js"
+    "react.js",
+    "vue.js"
   ],
   "scripts": {
     "sort-package": "npx sort-package-json"
@@ -27,7 +28,9 @@
     "eslint-plugin-n": "14.0.0",
     "eslint-plugin-prettier": "5.2.1",
     "eslint-plugin-promise": "7.1.0",
-    "eslint-plugin-unicorn": "56.0.0"
+    "eslint-plugin-unicorn": "56.0.0",
+    "eslint-plugin-vue": "9.29.0",
+    "vue-eslint-parser": "9.4.3"
   },
   "devDependencies": {
     "eslint": "8.57.1",
