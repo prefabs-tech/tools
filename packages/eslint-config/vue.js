@@ -11,7 +11,6 @@ module.exports = {
     "plugin:@typescript-eslint/recommended",
     "plugin:vue/vue3-recommended",
     "prettier",
-    "turbo",
   ],
   parser: "vue-eslint-parser",
   parserOptions: {
