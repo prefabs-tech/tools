@@ -71,6 +71,7 @@ module.exports = {
           err: true,
           i: true,
           param: true,
+          params: true,
           req: true,
           res: true,
         },
