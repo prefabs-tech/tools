@@ -40,6 +40,17 @@ In the root directory of your app or package, create a `.eslintrc.js` file:
     extends: ["@12deg/eslint-config/vue"],
   };
   ```
+  
+  **Note:** If you're using this configuration for a vue app, you may want to disable the `vue/no-reserved-component-names` rule, which prevents using reserved HTML tag names (e.g., Button, Input) as component names. You can do this by adding the following configuration:
+  ```js
+  module.exports = {
+    root: true,
+    extends: ["@12deg/eslint-config/vue"],
+    rules: {
+      "vue/no-reserved-component-names": "off",
+    }
+  };
+  ```
 
 ## Adding linting scripts
 In your `package.json`, add the following commands to the `scripts` section:
@@ -52,8 +63,8 @@ In your `package.json`, add the following commands to the `scripts` section:
 
 * For Vue projects (including .vue files):
   ```json
-  "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --ignore-path .gitignore",
-  "lint:fix": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
+  "lint": "eslint . --ext .vue",
+  "lint:fix": "eslint . --ext .vue --fix",
   ```
 
 ## Running linting
