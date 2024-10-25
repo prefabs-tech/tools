@@ -5,6 +5,7 @@ Custom ESLint configuration for streamlined linting across projects.
 - `@12deg/eslint-config` for general typescript projects
 - `@12deg/eslint-config/react` for react libraries
 - `@12deg/eslint-config/react-app` for react apps
+- `@12deg/eslint-config/vue` for vue projects
 
 ## Install
 Install the required dependencies:
@@ -37,16 +38,40 @@ In the root directory of your app or package, create a `.eslintrc.js` file:
   module.exports = {
     root: true,
     extends: ["@12deg/eslint-config/react-app"],
+
+* For vue projects:
+  ```js
+  module.exports = {
+    root: true,
+    extends: ["@12deg/eslint-config/vue"],
+  };
+  ```
+
+  **Note:** If you're using this configuration for a vue app, you may want to disable the `vue/no-reserved-component-names` rule, which prevents using reserved HTML tag names (e.g., Button, Input) as component names. You can do this by adding the following configuration:
+  ```js
+  module.exports = {
+    root: true,
+    extends: ["@12deg/eslint-config/vue"],
+    rules: {
+      "vue/no-reserved-component-names": "off",
+    }
   };
   ```
 
 ## Adding linting scripts
 In your `package.json`, add the following commands to the `scripts` section:
 
-```json
-"lint": "eslint .",
-"lint:fix": "eslint . --fix"
-```
+* For typescript or react projects:
+  ```json
+  "lint": "eslint .",
+  "lint:fix": "eslint . --fix"
+  ```
+
+* For vue projects (including .vue files):
+  ```json
+  "lint": "eslint . --ext .vue",
+  "lint:fix": "eslint . --ext .vue --fix",
+  ```
 
 ## Running linting
 Run the following command to lint your code:
