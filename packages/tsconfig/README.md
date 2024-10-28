@@ -9,14 +9,55 @@ $ npm i -D @12deg/tsconfig
 ```
 
 ## Usage
-In the root directory of your project, create or update a tsconfig.json file to extend the base configuration provided by `@12deg/tsconfig`:
+In the root directory of your project, create or update a `tsconfig.json` file to extend the base configuration that fits your project type:
 
-```json
-{
-  "extends": "@12deg/tsconfig",
-  // add custom options here if needed
-}
-```
+* For general typescript project:
+  ```json
+  {
+    "extends": "@12deg/tsconfig",
+    // add custom options here if needed
+  }
+  ```
+
+* For api server:
+  ```json
+  {
+    "extends": "@12deg/tsconfig/api.json",
+    // add custom options here if needed
+  }
+  ```
+  
+* For react app:
+  ```json
+  {
+    "extends": "@12deg/tsconfig/react-app.json",
+    // add custom options here if needed
+  }
+  ```
+
+* For react library:
+  ```json
+  {
+    "extends": "@12deg/tsconfig/react.json",
+    // add custom options here if needed
+  }
+  ```
+
+* For vue app:
+  ```json
+  {
+    "extends": "@12deg/tsconfig/vue-app.json",
+    // add custom options here if needed
+  }
+  ```
+  
+* For vue library:
+  ```json
+  {
+    "extends": "@12deg/tsconfig/vue.json",
+    // add custom options here if needed
+  }
+  ```
 
 ## Adding typescript checking scripts
 In your `package.json`, include a script for running typescript checks without emitting compiled files:
