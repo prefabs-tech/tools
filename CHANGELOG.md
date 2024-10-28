@@ -1,3 +1,12 @@
+## [0.1.6](https://github.com/12deg/tools/compare/v0.1.5...v0.1.6) (2024-10-28)
+
+
+### Features
+
+* **tsconfig:** support tsconfig for api, react-app, react, vue and vue app ([#15](https://github.com/12deg/tools/issues/15)) ([4159a13](https://github.com/12deg/tools/commit/4159a13fc72162dee1783e55eb125b06c775030e))
+
+
+
 ## [0.1.5](https://github.com/12deg/tools/compare/v0.1.4...v0.1.5) (2024-10-25)
 
 
