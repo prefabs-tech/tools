@@ -42,6 +42,14 @@ In the root directory of your project, create or update a `tsconfig.json` file t
     // add custom options here if needed
   }
   ```
+
+* For vue app:
+  ```json
+  {
+    "extends": "@12deg/tsconfig/vue-app.json",
+    // add custom options here if needed
+  }
+  ```
   
 * For vue library:
   ```json
