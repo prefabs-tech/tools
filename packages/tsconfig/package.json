@@ -11,11 +11,11 @@
   "license": "MIT",
   "main": "tsconfig.json",
   "files": [
-    "fastify-api.json",
+    "api.json",
     "react-app.json",
-    "react-library.json",
+    "react.json",
     "tsconfig.json",
-    "vue-library.json"
+    "vue.json"
   ],
   "publishConfig": {
     "access": "public"
