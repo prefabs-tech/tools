@@ -11,50 +11,83 @@ $ npm i -D @12deg/tsconfig
 ## Usage
 In the root directory of your project, create or update a `tsconfig.json` file to extend the base configuration that fits your project type:
 
-* For general typescript project:
+* For fastify libraries:
   ```json
   {
-    "extends": "@12deg/tsconfig",
-    // add custom options here if needed
+    "extends": "@12deg/tsconfig/fastify.json",
+    "exclude": [
+      "src/**/__test__/**/*",
+    ],
+    "compilerOptions": {
+      "baseUrl": "./",
+      "outDir": "./dist",
+    },
+    "include": [
+      "src/**/*.ts"
+    ],
   }
   ```
 
-* For api server:
+* For fastify apis:
   ```json
   {
-    "extends": "@12deg/tsconfig/api.json",
-    // add custom options here if needed
+    "extends": "@12deg/tsconfig/fastify-api.json",
   }
   ```
   
-* For react app:
+* For react apps:
   ```json
   {
     "extends": "@12deg/tsconfig/react-app.json",
-    // add custom options here if needed
+    "include": ["src"],
   }
   ```
 
-* For react library:
+* For react libraries:
   ```json
   {
     "extends": "@12deg/tsconfig/react.json",
-    // add custom options here if needed
+    "compilerOptions": {
+      "baseUrl": ".",
+      "outDir": "./dist",
+      "paths": {
+        "@/*": ["./src/*"]
+      },
+    },
+    "include": ["vite.config.*", "src/**/*", "src/**/*.tsx"],
   }
   ```
 
-* For vue app:
+* For vue apps:
   ```json
   {
     "extends": "@12deg/tsconfig/vue-app.json",
-    // add custom options here if needed
+    
   }
   ```
   
-* For vue library:
+* For vue libraries:
   ```json
   {
     "extends": "@12deg/tsconfig/vue.json",
+    "exclude": [
+      "src/**/__test__/**/*",
+    ],
+    "compilerOptions": {
+      "baseUrl": "./",
+      "outDir": "./dist/src"
+    },
+    "include": [
+      "src/**/*",
+      "src/**/*/*.vue"
+    ],
+  }
+  ```
+
+  * For general typescript projects:
+  ```json
+  {
+    "extends": "@12deg/tsconfig",
     // add custom options here if needed
   }
   ```
