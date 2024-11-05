@@ -17,7 +17,7 @@ $ npm i -D @12deg/eslint-config eslint prettier typescript
 ## Usage
 In the root directory of your app or package, create a `.eslintrc.js` file:
 
-* For general typescript projects:
+* For fastify projects:
   ```js
   module.exports = {
     root: true,
@@ -25,7 +25,7 @@ In the root directory of your app or package, create a `.eslintrc.js` file:
   };
   ```
 
-* For react libraires:
+* For react libraries:
   ```js
   module.exports = {
     root: true,
@@ -55,6 +55,14 @@ In the root directory of your app or package, create a `.eslintrc.js` file:
     rules: {
       "vue/no-reserved-component-names": "off",
     }
+  };
+  ```
+
+* For general typescript projects:
+  ```js
+  module.exports = {
+    root: true,
+    extends: ["@12deg/eslint-config"],
   };
   ```
 
