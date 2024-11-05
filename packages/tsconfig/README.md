@@ -11,7 +11,7 @@ $ npm i -D @12deg/tsconfig
 ## Usage
 In the root directory of your project, create or update a `tsconfig.json` file to extend the base configuration that fits your project type:
 
-* For fastify library:
+* For fastify libraries:
   ```json
   {
     "extends": "@12deg/tsconfig/fastify.json",
@@ -28,14 +28,14 @@ In the root directory of your project, create or update a `tsconfig.json` file t
   }
   ```
 
-* For fastify api:
+* For fastify apis:
   ```json
   {
     "extends": "@12deg/tsconfig/fastify-api.json",
   }
   ```
   
-* For react app:
+* For react apps:
   ```json
   {
     "extends": "@12deg/tsconfig/react-app.json",
@@ -43,7 +43,7 @@ In the root directory of your project, create or update a `tsconfig.json` file t
   }
   ```
 
-* For react library:
+* For react libraries:
   ```json
   {
     "extends": "@12deg/tsconfig/react.json",
@@ -58,7 +58,7 @@ In the root directory of your project, create or update a `tsconfig.json` file t
   }
   ```
 
-* For vue app:
+* For vue apps:
   ```json
   {
     "extends": "@12deg/tsconfig/vue-app.json",
@@ -66,7 +66,7 @@ In the root directory of your project, create or update a `tsconfig.json` file t
   }
   ```
   
-* For vue library:
+* For vue libraries:
   ```json
   {
     "extends": "@12deg/tsconfig/vue.json",
@@ -84,7 +84,7 @@ In the root directory of your project, create or update a `tsconfig.json` file t
   }
   ```
 
-  * For general typescript project:
+  * For general typescript projects:
   ```json
   {
     "extends": "@12deg/tsconfig",

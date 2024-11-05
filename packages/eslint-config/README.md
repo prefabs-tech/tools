@@ -2,10 +2,11 @@
 Custom ESLint configuration for streamlined linting across projects.
 
 ## Supported configurations:
-- `@12deg/eslint-config` for general typescript projects
+- `@12deg/eslint-config/fastify` fastify apis and libraries
 - `@12deg/eslint-config/react` for react libraries
 - `@12deg/eslint-config/react-app` for react apps
-- `@12deg/eslint-config/vue` for vue projects
+- `@12deg/eslint-config/vue` for vue apps and libraries
+- `@12deg/eslint-config` for general typescript projects
 
 ## Install
 Install the required dependencies:
@@ -17,11 +18,11 @@ $ npm i -D @12deg/eslint-config eslint prettier typescript
 ## Usage
 In the root directory of your app or package, create a `.eslintrc.js` file:
 
-* For fastify libraries and apis:
+* For fastify apis and libraries:
   ```js
   module.exports = {
     root: true,
-    extends: ["@12deg/eslint-config"],
+    extends: ["@12deg/eslint-config/fastify"],
   };
   ```
 
@@ -39,7 +40,7 @@ In the root directory of your app or package, create a `.eslintrc.js` file:
     root: true,
     extends: ["@12deg/eslint-config/react-app"],
 
-* For vue libraries and apps:
+* For vue apps and libraries:
   ```js
   module.exports = {
     root: true,
