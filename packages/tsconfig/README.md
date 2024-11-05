@@ -48,12 +48,12 @@ In the root directory of your project, create or update a `tsconfig.json` file t
   {
     "extends": "@12deg/tsconfig/react.json",
     "compilerOptions": {
-    "baseUrl": ".",
-    "outDir": "./dist",
-    "paths": {
-      "@/*": ["./src/*"]
+      "baseUrl": ".",
+      "outDir": "./dist",
+      "paths": {
+        "@/*": ["./src/*"]
+      },
     },
-  },
     "include": ["vite.config.*", "src/**/*", "src/**/*.tsx"],
   }
   ```
