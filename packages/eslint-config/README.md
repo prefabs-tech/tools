@@ -17,7 +17,7 @@ $ npm i -D @12deg/eslint-config eslint prettier typescript
 ## Usage
 In the root directory of your app or package, create a `.eslintrc.js` file:
 
-* For fastify projects:
+* For fastify libraries and apis:
   ```js
   module.exports = {
     root: true,
@@ -39,7 +39,7 @@ In the root directory of your app or package, create a `.eslintrc.js` file:
     root: true,
     extends: ["@12deg/eslint-config/react-app"],
 
-* For vue projects:
+* For vue libraries and apps:
   ```js
   module.exports = {
     root: true,
