@@ -11,7 +11,8 @@
   "license": "MIT",
   "main": "tsconfig.json",
   "files": [
-    "api.json",
+    "fastify.json",
+    "fastify-api.json",
     "react-app.json",
     "react.json",
     "tsconfig.json",
