@@ -21,8 +21,8 @@
     "sort-package": "npx sort-package-json"
   },
   "dependencies": {
-    "@typescript-eslint/eslint-plugin": "8.8.1",
-    "@typescript-eslint/parser": "8.8.1",
+    "@typescript-eslint/eslint-plugin": "8.14.0",
+    "@typescript-eslint/parser": "8.14.0",
     "eslint-config-prettier": "9.1.0",
     "eslint-config-react-app": "7.0.1",
     "eslint-config-turbo": "2.1.3",
