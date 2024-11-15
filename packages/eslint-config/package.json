@@ -1,6 +1,6 @@
 {
   "name": "@12deg/eslint-config",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "description": "ESLint config",
   "homepage": "https://github.com/12deg/tools/tree/main/packages/eslint-config#readme",
   "repository": {
