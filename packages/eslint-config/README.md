@@ -8,17 +8,19 @@ Custom ESLint configuration for streamlined linting across projects.
 - `@12deg/eslint-config/vue` for vue apps and libraries
 - `@12deg/eslint-config` for general typescript projects
 
-## Install
-Install the required dependencies:
+## Installation and usage
+* ### For fastify apis and libraries:
+  
+  In the root directory of your app or package:
 
-```sh
-$ npm i -D @12deg/eslint-config eslint prettier typescript
-```
+  Install dependencies:
 
-## Usage
-In the root directory of your app or package, create a `.eslintrc.js` file:
+  ```sh
+  $ npm i -D @12deg/eslint-config eslint@8 @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint eslint-config-prettier eslint-import-resolver-alias eslint-import-resolver-typescript eslint-plugin-import eslint-plugin-n eslint-plugin-prettier eslint-plugin-promise eslint-plugin-unicorn prettier typescript
+  ```
 
-* For fastify apis and libraries:
+  Create a `.eslintrc.js` file:
+
   ```js
   module.exports = {
     root: true,
@@ -26,7 +28,17 @@ In the root directory of your app or package, create a `.eslintrc.js` file:
   };
   ```
 
-* For react libraries:
+* ### For react libraries:
+
+  In the root directory of your app or package:
+
+  Install dependencies:
+
+  ```sh
+  $ npm i -D @12deg/eslint-config eslint@8 @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint eslint-config-prettier eslint-import-resolver-alias eslint-import-resolver-typescript eslint-plugin-import eslint-plugin-prettier eslint-plugin-unicorn prettier typescript
+  ```
+  Create a `.eslintrc.js` file:
+
   ```js
   module.exports = {
     root: true,
@@ -34,13 +46,34 @@ In the root directory of your app or package, create a `.eslintrc.js` file:
   };
   ```
 
-* For react apps:
+* ### For react apps:
+  
+  In the root directory of your app or package:
+
+  Install dependencies:
+
+  ```sh
+  $ npm i -D @12deg/eslint-config eslint@8 @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint eslint-config-prettier eslint-config-react-app eslint-import-resolver-alias eslint-import-resolver-typescript eslint-plugin-cypress eslint-plugin-import eslint-plugin-prettier eslint-plugin-unicorn prettier typescript
+  ```
+  Create a `.eslintrc.js` file:
+
   ```js
   module.exports = {
     root: true,
     extends: ["@12deg/eslint-config/react-app"],
 
-* For vue apps and libraries:
+* ### For vue apps and libraries:
+
+  In the root directory of your app or package:
+
+  Install dependencies:
+
+  ```sh
+  $ npm i -D @12deg/eslint-config eslint@8 @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint eslint-config-prettier eslint-import-resolver-alias eslint-import-resolver-typescript eslint-plugin-import eslint-plugin-prettier eslint-plugin-unicorn eslint-plugin-vue prettier typescript vue-eslint-parser
+  ```
+
+  Create a `.eslintrc.js` file:
+
   ```js
   module.exports = {
     root: true,
@@ -59,7 +92,17 @@ In the root directory of your app or package, create a `.eslintrc.js` file:
   };
   ```
 
-* For general typescript projects:
+* ### For general typescript projects:
+  In the root directory of your app or package:
+
+  Install dependencies:
+
+  ```sh
+  $ npm i -D @12deg/eslint-config eslint@8 @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint eslint-config-prettier eslint-import-resolver-alias eslint-import-resolver-typescript eslint-plugin-import eslint-plugin-n eslint-plugin-prettier eslint-plugin-promise eslint-plugin-unicorn prettier typescript
+  ```
+
+  Create a `.eslintrc.js` file:
+
   ```js
   module.exports = {
     root: true,
