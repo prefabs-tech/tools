@@ -115,6 +115,8 @@ Custom ESLint configuration for streamlined linting across projects.
   };
   ```
 
+**Note**: The above installation does not pin versions. Once the app or library is stable, pin dependencies to specific versions for stability.
+
 ## Adding linting scripts
 In your `package.json`, add the following commands to the `scripts` section:
 
