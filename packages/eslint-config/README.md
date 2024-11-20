@@ -10,7 +10,7 @@ Custom ESLint configuration for streamlined linting across projects.
 
 ## Installation and usage
 * ### For fastify apis and libraries:
-  
+
   In the root directory of your app or package:
 
   Install dependencies:
@@ -30,13 +30,14 @@ Custom ESLint configuration for streamlined linting across projects.
 
 * ### For react libraries:
 
-  In the root directory of your app or package:
+  In the root directory of your the react package:
 
   Install dependencies:
 
   ```sh
   $ npm i -D @12deg/eslint-config @typescript-eslint/eslint-plugin@^8.14.0 @typescript-eslint/parser@^8.14.0 eslint@^8.57.1 eslint-config-prettier@^9.1.0 eslint-import-resolver-alias@^1.1.2 eslint-import-resolver-typescript@^3.6.3 eslint-plugin-import@^2.31.0 eslint-plugin-prettier@^5.2.1 eslint-plugin-unicorn@^56.0.1 prettier@^3.3.3 typescript
   ```
+
   Create a `.eslintrc.js` file:
 
   ```js
@@ -47,20 +48,23 @@ Custom ESLint configuration for streamlined linting across projects.
   ```
 
 * ### For react apps:
-  
-  In the root directory of your app or package:
+
+  In the root directory of the react app:
 
   Install dependencies:
 
   ```sh
   $ npm i -D @12deg/eslint-config @typescript-eslint/eslint-plugin@^8.14.0 @typescript-eslint/parser@^8.14.0 eslint@^8.57.1 eslint-config-prettier@^9.1.0 eslint-config-react-app@^7.0.1 eslint-import-resolver-alias@^1.1.2 eslint-import-resolver-typescript@^3.6.3 eslint-plugin-cypress@^3.6.0 eslint-plugin-import@^2.31.0 eslint-plugin-prettier@^5.2.1 eslint-plugin-unicorn@^56.0.1 prettier@^3.3.3 typescript
   ```
+
   Create a `.eslintrc.js` file:
 
   ```js
   module.exports = {
     root: true,
     extends: ["@12deg/eslint-config/react-app"],
+  };
+  ```
 
 * ### For vue apps and libraries:
 
@@ -82,6 +86,7 @@ Custom ESLint configuration for streamlined linting across projects.
   ```
 
   **Note:** If you're using this configuration for a vue app, you may want to disable the `vue/no-reserved-component-names` rule, which prevents using reserved HTML tag names (e.g., Button, Input) as component names. You can do this by adding the following configuration:
+
   ```js
   module.exports = {
     root: true,
