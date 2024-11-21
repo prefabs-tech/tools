@@ -1,16 +1,16 @@
 {
   "name": "@12deg/tools",
   "version": "0.1.10",
+  "private": true,
   "homepage": "https://github.com/12deg/tools#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/12deg/tools.git"
+  },
   "author": {
     "name": "12 Degrés SAS",
     "email": "info@12deg.com",
     "url": "https://12deg.com"
-  },
-  "private": true,
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/12deg/tools.git"
   },
   "scripts": {
     "build": "turbo run build",
