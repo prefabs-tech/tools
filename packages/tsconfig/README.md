@@ -5,7 +5,7 @@ A shared TypeScript configuration for consistent and reliable type-checking acro
 Install the required dependencies:
 
 ```sh
-$ npm i -D @12deg/tsconfig
+npm i -D @12deg/tsconfig
 ```
 
 ## Usage
