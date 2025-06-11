@@ -1,8 +1,6 @@
 import js from "@eslint/js";
 import importPlugin from "eslint-plugin-import";
 import prettierPlugin from "eslint-plugin-prettier";
-import typescriptEslint from "@typescript-eslint/eslint-plugin";
-import typescriptParser from "@typescript-eslint/parser";
 import unicornPlugin from "eslint-plugin-unicorn";
 import vuePlugin from "eslint-plugin-vue";
 import vueParser from "vue-eslint-parser";
@@ -11,19 +9,16 @@ import globals from "globals";
 
 export default [
   js.configs.recommended,
+  ...tseslint.configs.recommended,
   ...vuePlugin.configs["flat/vue3-recommended"],
   {
     languageOptions: {
       parser: vueParser,
-      parserOptions: {
-        parser: typescriptParser,
-      },
       globals: {
         ...globals.node,
       },
     },
     plugins: {
-      "@typescript-eslint": typescriptEslint,
       import: importPlugin,
       prettier: prettierPlugin,
       unicorn: unicornPlugin,
@@ -110,13 +105,6 @@ export default [
     rules: {
       ...importPlugin.configs.recommended.rules,
       ...importPlugin.configs.typescript.rules,
-    },
-  },
-  // TypeScript configuration for Vue files
-  {
-    files: ["**/*.{ts,vue}"],
-    rules: {
-      ...typescriptEslint.configs.recommended.rules,
     },
   },
   // Prettier configuration for Vue files
