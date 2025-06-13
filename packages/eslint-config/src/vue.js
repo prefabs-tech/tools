@@ -1,20 +1,29 @@
 import js from "@eslint/js";
+import prettierConfig from "eslint-config-prettier";
 import importPlugin from "eslint-plugin-import";
 import prettierPlugin from "eslint-plugin-prettier";
 import unicornPlugin from "eslint-plugin-unicorn";
 import vuePlugin from "eslint-plugin-vue";
 import vueParser from "vue-eslint-parser";
-import prettierConfig from "eslint-config-prettier";
 import globals from "globals";
+import tseslint from "typescript-eslint";
 
 export default [
+  {
+    ignores: ["coverage/", "dist/", "node_modules/", "eslint.config.js"],
+  },
   js.configs.recommended,
   ...tseslint.configs.recommended,
   ...vuePlugin.configs["flat/vue3-recommended"],
   {
+    files: ["**/*.{js,ts,vue}"],
     languageOptions: {
       parser: vueParser,
+      ecmaVersion: "latest",
+      sourceType: "module",
       globals: {
+        ...globals.browser,
+        ...globals.es2021,
         ...globals.node,
       },
     },
@@ -25,10 +34,14 @@ export default [
       vue: vuePlugin,
     },
     rules: {
-      ...prettierConfig.rules,
-      
-      "brace-style": ["error", "1tbs"],
+      // Base rules
       curly: ["error", "all"],
+      "brace-style": ["error", "1tbs"],
+      "arrow-body-style": "off",
+
+      // Import rules
+      ...importPlugin.configs.recommended.rules,
+      ...importPlugin.configs.typescript.rules,
       "import/order": [
         "error",
         {
@@ -48,9 +61,13 @@ export default [
           "newlines-between": "always",
         },
       ],
-      "no-console": process.env.NODE_ENV === "production" ? "error" : "warn",
-      "no-debugger": process.env.NODE_ENV === "production" ? "error" : "warn",
+
+      // Prettier rules
+      ...prettierPlugin.configs.recommended.rules,
       "prettier/prettier": "error",
+
+      // Unicorn rules
+      ...unicornPlugin.configs.recommended.rules,
       "unicorn/filename-case": [
         "error",
         {
@@ -60,6 +77,17 @@ export default [
           },
         },
       ],
+      "unicorn/import-style": [
+        "error",
+        {
+          styles: {
+            "node:path": {
+              named: true,
+            },
+          },
+        },
+      ],
+      "unicorn/no-null": "off",
       "unicorn/numeric-separators-style": [
         "error",
         {
@@ -69,6 +97,7 @@ export default [
           },
         },
       ],
+      "unicorn/prefer-structured-clone": "off",
       "unicorn/prevent-abbreviations": [
         "error",
         {
@@ -85,33 +114,42 @@ export default [
           },
         },
       ],
+
+      // Vue specific rules
       "vue/multi-word-component-names": "off",
       "vue/order-in-components": "off",
+      "no-console": process.env.NODE_ENV === "production" ? "error" : "warn",
+      "no-debugger": process.env.NODE_ENV === "production" ? "error" : "warn",
     },
     settings: {
       "import/resolver": {
+        node: {
+          extensions: [".js", ".jsx", ".ts", ".tsx", ".vue"],
+        },
+        typescript: {
+          alwaysTryTypes: true,
+        },
         alias: {
           map: [["@", "./src"]],
-          extensions: [".ts"],
+          extensions: [".ts", ".vue"],
         },
-        typescript: true,
-        node: true,
+      },
+      node: {
+        tryExtensions: [".js", ".json", ".node", ".ts", ".vue"],
       },
     },
   },
-  // Import configuration for Vue files
+  // Test files configuration
   {
-    files: ["**/*.{js,ts,vue}"],
+    files: ["**/*.spec.{js,ts}"],
     rules: {
-      ...importPlugin.configs.recommended.rules,
-      ...importPlugin.configs.typescript.rules,
+      // Add any test-specific rules here
     },
   },
-  // Prettier configuration for Vue files
+  // Prettier config should be last to override any conflicting rules
   {
-    files: ["**/*.{js,ts,vue}"],
     rules: {
-      ...prettierPlugin.configs.recommended.rules,
+      ...prettierConfig.rules,
     },
   },
 ];

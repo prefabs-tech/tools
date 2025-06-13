@@ -1,16 +1,21 @@
 import js from "@eslint/js";
-import prettierConfig from "eslint-config-prettier";
+import globals from "globals";
 import importPlugin from "eslint-plugin-import";
+import nodePlugin from "eslint-plugin-n";
+import prettierConfig from "eslint-config-prettier";
 import prettierPlugin from "eslint-plugin-prettier";
 import promisePlugin from "eslint-plugin-promise";
 import unicornPlugin from "eslint-plugin-unicorn";
-import globals from "globals";
 import tseslint from "typescript-eslint";
 
 export default [
+  {
+    ignores: ["coverage/", "dist/", "node_modules/", "eslint.config.js"],
+  },
   js.configs.recommended,
   ...tseslint.configs.recommended,
   {
+    files: ["**/*.{js,ts,tsx}"],
     languageOptions: {
       ecmaVersion: "latest",
       sourceType: "module",
@@ -21,16 +26,30 @@ export default [
       },
     },
     plugins: {
+      n: nodePlugin,
       import: importPlugin,
       prettier: prettierPlugin,
       promise: promisePlugin,
       unicorn: unicornPlugin,
     },
     rules: {
-      ...prettierConfig.rules,
-
+      // Base rules
       curly: ["error", "all"],
       "brace-style": ["error", "1tbs"],
+      "arrow-body-style": "off",
+
+      ...nodePlugin.configs["flat/recommended-script"],
+      "n/no-unsupported-features/es-syntax": "off",
+      "n/no-unpublished-import": [
+        "error",
+        {
+          allowModules: ["@faker-js/faker", "mercurius-codegen", "query-string"],
+        },
+      ],
+
+      // Import rules
+      ...importPlugin.configs.recommended.rules,
+      ...importPlugin.configs.typescript.rules,
       "import/order": [
         "error",
         {
@@ -50,7 +69,16 @@ export default [
           "newlines-between": "always",
         },
       ],
+
+      // Prettier rules
+      ...prettierPlugin.configs.recommended.rules,
       "prettier/prettier": "error",
+
+      // Promise rules
+      ...promisePlugin.configs.recommended.rules,
+
+      // Unicorn rules
+      ...unicornPlugin.configs.recommended.rules,
       "unicorn/filename-case": [
         "error",
         {
@@ -79,6 +107,7 @@ export default [
           },
         },
       ],
+      "unicorn/prefer-structured-clone": "off",
       "unicorn/prevent-abbreviations": [
         "error",
         {
@@ -106,29 +135,17 @@ export default [
       },
     },
   },
-  // Import configuration
+  // Test files configuration
   {
-    files: ["**/*.{js,ts,tsx}"],
+    files: ["**/*.spec.ts"],
     rules: {
-      ...importPlugin.configs.recommended.rules,
-      ...importPlugin.configs.typescript.rules,
+      // Add any test-specific rules here
     },
   },
-  // Unicorn configuration
+  // Prettier config should be last to override any conflicting rules
   {
-    files: ["**/*.{js,ts,tsx}"],
     rules: {
-      ...unicornPlugin.configs.recommended.rules,
+      ...prettierConfig.rules,
     },
-  },
-  // Prettier configuration
-  {
-    files: ["**/*.{js,ts,tsx}"],
-    rules: {
-      ...prettierPlugin.configs.recommended.rules,
-    },
-  },
-  {
-    ignores: ["coverage/", "dist/", "node_modules/", "eslint.config.js"],
   },
 ];
