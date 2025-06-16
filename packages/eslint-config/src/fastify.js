@@ -1,4 +1,4 @@
-import baseConfig from "./config.js";
+import baseConfig from "./index.js";
 
 export default [
   ...baseConfig,

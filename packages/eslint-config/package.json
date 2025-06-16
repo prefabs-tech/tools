@@ -1,6 +1,6 @@
 {
   "name": "@12deg/eslint-config",
-  "version": "1.0.0",
+  "version": "0.1.11",
   "description": "ESLint config",
   "type": "module",
   "homepage": "https://github.com/12deg/tools/tree/main/packages/eslint-config#readme",
@@ -46,29 +46,6 @@
   },
   "peerDependencies": {
     "eslint": ">=9.0.0"
-  },
-  "peerDependenciesMeta": {
-    "@eslint/eslintrc": {
-      "optional": true
-    },
-    "eslint-config-react-app": {
-      "optional": true
-    },
-    "eslint-plugin-cypress": {
-      "optional": true
-    },
-    "eslint-plugin-n": {
-      "optional": true
-    },
-    "eslint-plugin-promise": {
-      "optional": true
-    },
-    "eslint-plugin-vue": {
-      "optional": true
-    },
-    "vue-eslint-parser": {
-      "optional": true
-    }
   },
   "publishConfig": {
     "access": "public"
