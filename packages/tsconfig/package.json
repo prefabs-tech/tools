@@ -1,11 +1,11 @@
 {
-  "name": "@12deg/tsconfig",
+  "name": "@prefabs.tech/tsconfig",
   "version": "0.1.11",
   "description": "Typescript configuration",
-  "homepage": "https://github.com/12deg/tools/tree/main/packages/tsconfig#readme",
+  "homepage": "https://github.com/prefabs-tech/tools/tree/main/packages/tsconfig#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/12deg/tools.git",
+    "url": "git+https://github.com/prefabs-tech/tools.git",
     "directory": "packages/tsconfig"
   },
   "license": "MIT",

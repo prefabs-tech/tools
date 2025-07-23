@@ -1,12 +1,12 @@
-# @12deg/eslint-config
+# @prefabs.tech/eslint-config
 Custom ESLint configuration for streamlined linting across projects.
 
 ## Supported configurations:
-- `@12deg/eslint-config/fastify` fastify apis and libraries
-- `@12deg/eslint-config/react` for react libraries
-- `@12deg/eslint-config/react-app` for react apps
-- `@12deg/eslint-config/vue` for vue apps and libraries
-- `@12deg/eslint-config` for general typescript projects
+- `@prefabs.tech/eslint-config/fastify` fastify apis and libraries
+- `@prefabs.tech/eslint-config/react` for react libraries
+- `@prefabs.tech/eslint-config/react-app` for react apps
+- `@prefabs.tech/eslint-config/vue` for vue apps and libraries
+- `@prefabs.tech/eslint-config` for general typescript projects
 
 ## Installation and usage
 * ### For fastify apis and libraries:
@@ -16,7 +16,7 @@ Custom ESLint configuration for streamlined linting across projects.
   Install dependencies:
 
   ```sh
-  npm i -D @12deg/eslint-config @typescript-eslint/eslint-plugin@8.14.0 @typescript-eslint/parser@8.14.0 eslint@8.57.1 eslint-config-prettier@9.1.0 eslint-import-resolver-alias@1.1.2 eslint-import-resolver-typescript@3.6.3 eslint-plugin-import@2.31.0 eslint-plugin-n@14.0.0 eslint-plugin-prettier@5.2.1 eslint-plugin-promise@7.1.0 eslint-plugin-unicorn@56.0.1 prettier@3.3.3 typescript
+  npm i -D @prefabs.tech/eslint-config @typescript-eslint/eslint-plugin@8.14.0 @typescript-eslint/parser@8.14.0 eslint@8.57.1 eslint-config-prettier@9.1.0 eslint-import-resolver-alias@1.1.2 eslint-import-resolver-typescript@3.6.3 eslint-plugin-import@2.31.0 eslint-plugin-n@14.0.0 eslint-plugin-prettier@5.2.1 eslint-plugin-promise@7.1.0 eslint-plugin-unicorn@56.0.1 prettier@3.3.3 typescript
   ```
 
   Create a `.eslintrc.js` file:
@@ -24,7 +24,7 @@ Custom ESLint configuration for streamlined linting across projects.
   ```js
   module.exports = {
     root: true,
-    extends: ["@12deg/eslint-config/fastify"],
+    extends: ["@prefabs.tech/eslint-config/fastify"],
   };
   ```
 
@@ -35,7 +35,7 @@ Custom ESLint configuration for streamlined linting across projects.
   Install dependencies:
 
   ```sh
-  npm i -D @12deg/eslint-config @typescript-eslint/eslint-plugin@8.14.0 @typescript-eslint/parser@8.14.0 eslint@8.57.1 eslint-config-prettier@9.1.0 eslint-import-resolver-alias@1.1.2 eslint-import-resolver-typescript@3.6.3 eslint-plugin-import@2.31.0 eslint-plugin-prettier@5.2.1 eslint-plugin-unicorn@56.0.1 prettier@3.3.3 typescript
+  npm i -D @prefabs.tech/eslint-config @typescript-eslint/eslint-plugin@8.14.0 @typescript-eslint/parser@8.14.0 eslint@8.57.1 eslint-config-prettier@9.1.0 eslint-import-resolver-alias@1.1.2 eslint-import-resolver-typescript@3.6.3 eslint-plugin-import@2.31.0 eslint-plugin-prettier@5.2.1 eslint-plugin-unicorn@56.0.1 prettier@3.3.3 typescript
   ```
 
   Create a `.eslintrc.js` file:
@@ -43,7 +43,7 @@ Custom ESLint configuration for streamlined linting across projects.
   ```js
   module.exports = {
     root: true,
-    extends: ["@12deg/eslint-config/react"],
+    extends: ["@prefabs.tech/eslint-config/react"],
   };
   ```
 
@@ -54,7 +54,7 @@ Custom ESLint configuration for streamlined linting across projects.
   Install dependencies:
 
   ```sh
-  npm i -D @12deg/eslint-config @typescript-eslint/eslint-plugin@8.14.0 @typescript-eslint/parser@8.14.0 eslint@8.57.1 eslint-config-prettier@9.1.0 eslint-config-react-app@7.0.1 eslint-import-resolver-alias@1.1.2 eslint-import-resolver-typescript@3.6.3 eslint-plugin-cypress@3.6.0 eslint-plugin-import@2.31.0 eslint-plugin-prettier@5.2.1 eslint-plugin-unicorn@56.0.1 prettier@3.3.3 typescript
+  npm i -D @prefabs.tech/eslint-config @typescript-eslint/eslint-plugin@8.14.0 @typescript-eslint/parser@8.14.0 eslint@8.57.1 eslint-config-prettier@9.1.0 eslint-config-react-app@7.0.1 eslint-import-resolver-alias@1.1.2 eslint-import-resolver-typescript@3.6.3 eslint-plugin-cypress@3.6.0 eslint-plugin-import@2.31.0 eslint-plugin-prettier@5.2.1 eslint-plugin-unicorn@56.0.1 prettier@3.3.3 typescript
   ```
 
   Create a `.eslintrc.js` file:
@@ -62,7 +62,7 @@ Custom ESLint configuration for streamlined linting across projects.
   ```js
   module.exports = {
     root: true,
-    extends: ["@12deg/eslint-config/react-app"],
+    extends: ["@prefabs.tech/eslint-config/react-app"],
   };
   ```
 
@@ -73,7 +73,7 @@ Custom ESLint configuration for streamlined linting across projects.
   Install dependencies:
 
   ```sh
-  npm i -D @12deg/eslint-config @typescript-eslint/eslint-plugin@8.14.0 @typescript-eslint/parser@8.14.0 eslint@8.57.1 eslint-config-prettier@9.1.0 eslint-import-resolver-alias@1.1.2 eslint-import-resolver-typescript@3.6.3 eslint-plugin-import@2.31.0 eslint-plugin-prettier@5.2.1 eslint-plugin-unicorn@56.0.1 eslint-plugin-vue@9.29.0 prettier@3.3.3 typescript vue-eslint-parser@9.4.3
+  npm i -D @prefabs.tech/eslint-config @typescript-eslint/eslint-plugin@8.14.0 @typescript-eslint/parser@8.14.0 eslint@8.57.1 eslint-config-prettier@9.1.0 eslint-import-resolver-alias@1.1.2 eslint-import-resolver-typescript@3.6.3 eslint-plugin-import@2.31.0 eslint-plugin-prettier@5.2.1 eslint-plugin-unicorn@56.0.1 eslint-plugin-vue@9.29.0 prettier@3.3.3 typescript vue-eslint-parser@9.4.3
   ```
 
   Create a `.eslintrc.js` file:
@@ -81,7 +81,7 @@ Custom ESLint configuration for streamlined linting across projects.
   ```js
   module.exports = {
     root: true,
-    extends: ["@12deg/eslint-config/vue"],
+    extends: ["@prefabs.tech/eslint-config/vue"],
   };
   ```
 
@@ -90,7 +90,7 @@ Custom ESLint configuration for streamlined linting across projects.
   ```js
   module.exports = {
     root: true,
-    extends: ["@12deg/eslint-config/vue"],
+    extends: ["@prefabs.tech/eslint-config/vue"],
     rules: {
       "vue/no-reserved-component-names": "off",
     }
@@ -103,7 +103,7 @@ Custom ESLint configuration for streamlined linting across projects.
   Install dependencies:
 
   ```sh
-  npm i -D @12deg/eslint-config eslint@8.57.1 @typescript-eslint/eslint-plugin@8.14.0 @typescript-eslint/parser@8.14.0 eslint@8.57.1 eslint-config-prettier@9.1.0 eslint-import-resolver-alias@1.1.2 eslint-import-resolver-typescript@3.6.3 eslint-plugin-import@2.31.0 eslint-plugin-n@14.0.0 eslint-plugin-prettier@5.2.1 eslint-plugin-promise@7.1.0 eslint-plugin-unicorn@56.0.1 prettier@3.3.3 typescript
+  npm i -D @prefabs.tech/eslint-config eslint@8.57.1 @typescript-eslint/eslint-plugin@8.14.0 @typescript-eslint/parser@8.14.0 eslint@8.57.1 eslint-config-prettier@9.1.0 eslint-import-resolver-alias@1.1.2 eslint-import-resolver-typescript@3.6.3 eslint-plugin-import@2.31.0 eslint-plugin-n@14.0.0 eslint-plugin-prettier@5.2.1 eslint-plugin-promise@7.1.0 eslint-plugin-unicorn@56.0.1 prettier@3.3.3 typescript
   ```
 
   Create a `.eslintrc.js` file:
@@ -111,7 +111,7 @@ Custom ESLint configuration for streamlined linting across projects.
   ```js
   module.exports = {
     root: true,
-    extends: ["@12deg/eslint-config"],
+    extends: ["@prefabs.tech/eslint-config"],
   };
   ```
 

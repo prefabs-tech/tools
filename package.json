@@ -1,16 +1,16 @@
 {
-  "name": "@12deg/tools",
+  "name": "@prefabs.tech/tools",
   "version": "0.1.11",
   "private": true,
-  "homepage": "https://github.com/12deg/tools#readme",
+  "homepage": "https://github.com/prefabs-tech/tools#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/12deg/tools.git"
+    "url": "git+https://github.com/prefabs-tech/tools.git"
   },
   "author": {
-    "name": "12 Degrés SAS",
-    "email": "info@12deg.com",
-    "url": "https://12deg.com"
+    "name": "Prefabs Tech",
+    "email": "pm@prefabs.tech",
+    "url": "https://github.com/prefabs-tech"
   },
   "scripts": {
     "build": "turbo run build",
