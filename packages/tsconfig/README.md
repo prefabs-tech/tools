@@ -1,11 +1,11 @@
-# @12deg/tsconfig
+# @prefabs.tech/tsconfig
 A shared TypeScript configuration for consistent and reliable type-checking across projects.
 
 ## Install
 Install the required dependencies:
 
 ```sh
-npm i -D @12deg/tsconfig
+npm i -D @prefabs.tech/tsconfig
 ```
 
 ## Usage
@@ -14,7 +14,7 @@ In the root directory of your project, create or update a `tsconfig.json` file t
 * For fastify libraries:
   ```json
   {
-    "extends": "@12deg/tsconfig/fastify.json",
+    "extends": "@prefabs.tech/tsconfig/fastify.json",
     "exclude": [
       "src/**/__test__/**/*",
     ],
@@ -31,14 +31,14 @@ In the root directory of your project, create or update a `tsconfig.json` file t
 * For fastify apis:
   ```json
   {
-    "extends": "@12deg/tsconfig/fastify-api.json",
+    "extends": "@prefabs.tech/tsconfig/fastify-api.json",
   }
   ```
   
 * For react apps:
   ```json
   {
-    "extends": "@12deg/tsconfig/react-app.json",
+    "extends": "@prefabs.tech/tsconfig/react-app.json",
     "include": ["src"],
   }
   ```
@@ -46,7 +46,7 @@ In the root directory of your project, create or update a `tsconfig.json` file t
 * For react libraries:
   ```json
   {
-    "extends": "@12deg/tsconfig/react.json",
+    "extends": "@prefabs.tech/tsconfig/react.json",
     "compilerOptions": {
       "baseUrl": ".",
       "outDir": "./dist",
@@ -61,7 +61,7 @@ In the root directory of your project, create or update a `tsconfig.json` file t
 * For vue apps:
   ```json
   {
-    "extends": "@12deg/tsconfig/vue-app.json",
+    "extends": "@prefabs.tech/tsconfig/vue-app.json",
     
   }
   ```
@@ -69,7 +69,7 @@ In the root directory of your project, create or update a `tsconfig.json` file t
 * For vue libraries:
   ```json
   {
-    "extends": "@12deg/tsconfig/vue.json",
+    "extends": "@prefabs.tech/tsconfig/vue.json",
     "exclude": [
       "src/**/__test__/**/*",
     ],
@@ -87,7 +87,7 @@ In the root directory of your project, create or update a `tsconfig.json` file t
   * For general typescript projects:
   ```json
   {
-    "extends": "@12deg/tsconfig",
+    "extends": "@prefabs.tech/tsconfig",
     // add custom options here if needed
   }
   ```

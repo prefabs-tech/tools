@@ -1,4 +1,4 @@
-# @12deg/tools
+# @prefabs.tech/tools
 
 ## Packages
 

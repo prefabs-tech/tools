@@ -1,11 +1,11 @@
 {
-  "name": "@12deg/eslint-config",
+  "name": "@prefabs.tech/eslint-config",
   "version": "0.1.11",
   "description": "ESLint config",
-  "homepage": "https://github.com/12deg/tools/tree/main/packages/eslint-config#readme",
+  "homepage": "https://github.com/prefabs-tech/tools/tree/main/packages/eslint-config#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/12deg/tools.git",
+    "url": "git+https://github.com/prefabs-tech/tools.git",
     "directory": "packages/eslint-config"
   },
   "license": "MIT",
