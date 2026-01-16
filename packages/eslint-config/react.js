@@ -18,6 +18,8 @@ module.exports = {
   plugins: ["import", "prettier", "unicorn"],
   root: true,
   rules: {
+    "brace-style": ["error", "1tbs"],
+    curly: ["error", "all"],
     "import/default": "off",
     "import/order": [
       1,
