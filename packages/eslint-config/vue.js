@@ -100,6 +100,7 @@ export default [
       ],
       "unicorn/no-array-callback-reference": "off",
       "unicorn/no-array-reduce": "off",
+      "unicorn/no-negated-condition": "off",
       "unicorn/no-null": "off",
       "unicorn/numeric-separators-style": [
         "error",
