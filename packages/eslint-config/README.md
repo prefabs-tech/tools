@@ -76,7 +76,7 @@ Custom ESLint configuration for streamlined linting across projects.
   pnpm i -D @prefabs.tech/eslint-config eslint
   ```
 
-  Create a `.eslint.config.js` file:
+  Create a `eslint.config.js` file:
 
   ```js
   import vueConfig from "@12deg/eslint-config/vue.js";
