@@ -112,6 +112,7 @@ export default [
           },
         },
       ],
+      "unicorn/no-useless-undefined": "off",
       "unicorn/prefer-array-some": "off",
       "unicorn/prefer-export-from": "off",
       "unicorn/prefer-global-this": "off",
@@ -137,6 +138,7 @@ export default [
       // Vue specific rules
       "vue/multi-word-component-names": "off",
       "vue/order-in-components": "off",
+      "vue/no-v-model-argument": "off",
       "no-console": process.env.NODE_ENV === "production" ? "error" : "warn",
       "no-debugger": process.env.NODE_ENV === "production" ? "error" : "warn",
     },
