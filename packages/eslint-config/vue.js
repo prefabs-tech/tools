@@ -138,8 +138,10 @@ export default [
 
       // Vue specific rules
       "vue/multi-word-component-names": "off",
-      "vue/order-in-components": "off",
+      "vue/no-multiple-template-root": "off",
+      "vue/no-v-for-template-key": "off",
       "vue/no-v-model-argument": "off",
+      "vue/order-in-components": "off",
       "no-console": process.env.NODE_ENV === "production" ? "error" : "warn",
       "no-debugger": process.env.NODE_ENV === "production" ? "error" : "warn",
     },
