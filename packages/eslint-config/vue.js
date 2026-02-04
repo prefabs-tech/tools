@@ -117,8 +117,9 @@ export default [
       "unicorn/prefer-array-some": "off",
       "unicorn/prefer-export-from": "off",
       "unicorn/prefer-global-this": "off",
-      "unicorn/prefer-structured-clone": "off",
       "unicorn/prefer-query-selector": "off",
+      "unicorn/prefer-structured-clone": "off",
+      "unicorn/prefer-type-error": "off",
       "unicorn/prevent-abbreviations": [
         "error",
         {
