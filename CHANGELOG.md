@@ -1,3 +1,12 @@
+# [0.3.0](https://github.com/prefabs-tech/tools/compare/v0.2.1...v0.3.0) (2026-02-04)
+
+
+### Features
+
+* **esling-config/vue:** update eslint version and related config ([#33](https://github.com/prefabs-tech/tools/issues/33)) ([b12659b](https://github.com/prefabs-tech/tools/commit/b12659b1d8bbd2e6be5b649a77f7f7d3a959cdf1))
+
+
+
 ## [0.2.1](https://github.com/prefabs-tech/tools/compare/v0.2.0...v0.2.1) (2026-01-22)
 
 

@@ -1,6 +1,6 @@
 {
   "name": "@prefabs.tech/eslint-config",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "ESLint config",
   "homepage": "https://github.com/prefabs-tech/tools/tree/main/packages/eslint-config#readme",
   "repository": {
