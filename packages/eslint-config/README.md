@@ -79,7 +79,7 @@ Custom ESLint configuration for streamlined linting across projects.
   Create a `eslint.config.js` file:
 
   ```js
-  import vueConfig from "@12deg/eslint-config/vue.js";
+  import vueConfig from "@prefabs.tech/eslint-config/vue.js";
 
   export default vueConfig;
   ```
@@ -87,7 +87,7 @@ Custom ESLint configuration for streamlined linting across projects.
   **Note:** If you're using this configuration for a vue app, you may want to disable the `vue/no-reserved-component-names` rule, which prevents using reserved HTML tag names (e.g., Button, Input) as component names. You can do this by adding the following configuration:
 
   ```js
-  import vueConfig from "@12deg/eslint-config/vue";
+  import vueConfig from "@prefabs.tech/eslint-config/vue.js";
 
   export default [
     ...vueConfig,
