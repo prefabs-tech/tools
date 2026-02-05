@@ -1,3 +1,12 @@
+# [0.4.0](https://github.com/prefabs-tech/tools/compare/v0.3.0...v0.4.0) (2026-02-05)
+
+
+### Features
+
+* migrate fastify / typescript eslint config to v9 (flat config) ([#36](https://github.com/prefabs-tech/tools/issues/36)) ([278283f](https://github.com/prefabs-tech/tools/commit/278283f3a0c03329ff0b7cdbebbba1140ce07fe3))
+
+
+
 # [0.3.0](https://github.com/prefabs-tech/tools/compare/v0.2.1...v0.3.0) (2026-02-04)
 
 
