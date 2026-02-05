@@ -164,6 +164,18 @@ export default [
       },
     },
   },
+  // Vite configuration file settings
+  {
+    files: ["vite.config.*"],
+    settings: {
+      "import/ignore": [
+        "@vitejs/plugin-vue",
+        "@vitejs/plugin-vue-jsx",
+        "vite",
+        "rollup",
+      ],
+    },
+  },
   // Test files configuration
   {
     files: ["**/*.spec.{js,ts}"],
