@@ -36,6 +36,7 @@ export default [
 
       // Node rules
       ...nodePlugin.configs["flat/recommended-script"].rules,
+      "n/no-missing-import": "off",
       "n/no-unsupported-features/es-syntax": [
         "error",
         { ignores: ["modules"] },
@@ -117,6 +118,7 @@ export default [
             param: true,
             req: true,
             res: true,
+            utils: true,
           },
         },
       ],
