@@ -16,16 +16,15 @@ Custom ESLint configuration for streamlined linting across projects.
   Install dependencies:
 
   ```sh
-  npm i -D @prefabs.tech/eslint-config @typescript-eslint/eslint-plugin@8.14.0 @typescript-eslint/parser@8.14.0 eslint@8.57.1 eslint-config-prettier@9.1.0 eslint-import-resolver-alias@1.1.2 eslint-import-resolver-typescript@3.6.3 eslint-plugin-import@2.31.0 eslint-plugin-n@14.0.0 eslint-plugin-prettier@5.2.1 eslint-plugin-promise@7.1.0 eslint-plugin-unicorn@56.0.1 prettier@3.3.3 typescript
+  npm i -D @prefabs.tech/eslint-config eslint prettier typescript
   ```
 
-  Create a `.eslintrc.js` file:
+  Create a `eslint.config.js` file:
 
   ```js
-  module.exports = {
-    root: true,
-    extends: ["@prefabs.tech/eslint-config/fastify"],
-  };
+  import fastifyConfig from "@prefabs.tech/eslint-config/fastify.js";
+
+  export default fastifyConfig;
   ```
 
 * ### For react libraries:
@@ -105,16 +104,16 @@ Custom ESLint configuration for streamlined linting across projects.
   Install dependencies:
 
   ```sh
-  npm i -D @prefabs.tech/eslint-config eslint@8.57.1 @typescript-eslint/eslint-plugin@8.14.0 @typescript-eslint/parser@8.14.0 eslint@8.57.1 eslint-config-prettier@9.1.0 eslint-import-resolver-alias@1.1.2 eslint-import-resolver-typescript@3.6.3 eslint-plugin-import@2.31.0 eslint-plugin-n@14.0.0 eslint-plugin-prettier@5.2.1 eslint-plugin-promise@7.1.0 eslint-plugin-unicorn@56.0.1 prettier@3.3.3 typescript
+  npm i -D @prefabs.tech/eslint-config eslint prettier typescript
   ```
 
-  Create a `.eslintrc.js` file:
+  Create a `eslint.config.js` file:
 
   ```js
-  module.exports = {
-    root: true,
-    extends: ["@prefabs.tech/eslint-config"],
-  };
+  import config from "@prefabs.tech/eslint-config";
+
+  export default config;
+  ```
   ```
 
 ## Adding linting scripts
@@ -124,12 +123,6 @@ In your `package.json`, add the following commands to the `scripts` section:
   ```json
   "lint": "eslint .",
   "lint:fix": "eslint . --fix"
-  ```
-
-* For vue projects (including .vue files):
-  ```json
-  "lint": "eslint . --ext .vue",
-  "lint:fix": "eslint . --ext .vue --fix",
   ```
 
 ## Running linting
