@@ -73,7 +73,7 @@ Custom ESLint configuration for streamlined linting across projects.
   Install dependencies:
 
   ```sh
-  pnpm i -D @prefabs.tech/eslint-config eslint
+  pnpm i -D @prefabs.tech/eslint-config eslint@9.39.2 @eslint/js@9.39.2 eslint-config-prettier@10.1.8 eslint-import-resolver-alias@1.1.2 eslint-import-resolver-typescript@4.4.4 eslint-plugin-import@2.32.0 eslint-plugin-prettier@5.5.5 eslint-plugin-unicorn@62.0.0 eslint-plugin-vue@10.7.0 prettier@3.8.1 typescript-eslint@8.54.0 vue-eslint-parser@10.2.0
   ```
 
   Create a `eslint.config.js` file:
