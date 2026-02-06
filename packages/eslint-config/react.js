@@ -1,27 +1,50 @@
-module.exports = {
-  env: {
-    node: true,
+import js from "@eslint/js";
+import prettierConfig from "eslint-config-prettier";
+import importPlugin from "eslint-plugin-import";
+import unicornPlugin from "eslint-plugin-unicorn";
+import prettierPlugin from "eslint-plugin-prettier";
+import globals from "globals";
+import tseslint from "typescript-eslint";
+
+export default [
+  {
+    ignores: ["dist/", "build/", "coverage/", "node_modules/"],
   },
-  extends: [
-    "eslint:recommended",
-    "plugin:import/recommended",
-    "plugin:import/typescript",
-    "plugin:prettier/recommended",
-    "plugin:@typescript-eslint/recommended",
-    "prettier",
-  ],
-  parserOptions: {
-    ecmaVersion: "latest",
-    parser: "@typescript-eslint/parser",
-    sourceType: "module",
-  },
-  plugins: ["import", "prettier", "unicorn"],
-  root: true,
-  rules: {
-    "brace-style": ["error", "1tbs"],
-    curly: ["error", "all"],
-    "import/default": "off",
-    "import/order": [
+
+  // Base JS rules
+  js.configs.recommended,
+
+  // TypeScript recommended rules
+  ...tseslint.configs.recommended,
+
+  // Disable rules that conflict with Prettier
+  prettierConfig,
+
+  {
+    files: ["**/*.{js,jsx,ts,tsx}"],
+    languageOptions: {
+      globals: {
+        ...globals.browser,
+        ...globals.es2021,
+        ...globals.node,
+      },
+      ecmaVersion: "latest",
+      parser: tseslint.parser,
+      sourceType: "module",
+    },
+    plugins: {
+      "@typescript-eslint": tseslint.plugin,
+      import: importPlugin,
+      prettier: prettierPlugin,
+      unicorn: unicornPlugin,
+    },
+    rules: {
+      // Base rules
+      "brace-style": ["error", "1tbs"],
+      curly: ["error", "all"],
+
+      // Imports rules
+      "import/order": [
       1,
       {
         alphabetize: {
@@ -40,64 +63,71 @@ module.exports = {
         "newlines-between": "always",
       },
     ],
-    "no-console": process.env.NODE_ENV === "production" ? "error" : "warn",
-    "no-debugger": process.env.NODE_ENV === "production" ? "error" : "warn",
-    "no-unused-expressions": "off",
-    "@typescript-eslint/no-unused-expressions": [
-      "error",
-      {
-        allowShortCircuit: true,
-        allowTernary: true,
-        allowTaggedTemplates: true,
-      },
-    ],
-    "@typescript-eslint/no-unused-vars": [
-      "warn",
-      {
-        args: "none",
-        ignoreRestSiblings: true,
-      },
-    ],
-    "prettier/prettier": "error",
-    "unicorn/filename-case": [
-      "error",
-      {
-        cases: {
-          kebabCase: true,
-          pascalCase: true,
+
+      "no-console": process.env.NODE_ENV === "production" ? "error" : "warn",
+      "no-debugger": process.env.NODE_ENV === "production" ? "error" : "warn",
+
+      // TypeScript rules
+      "@typescript-eslint/no-unused-vars": [
+        "warn",
+        {
+          args: "none",
+          ignoreRestSiblings: true,
         },
-      },
-    ],
-    "unicorn/numeric-separators-style": [
-      "error",
-      {
-        number: {
-          minimumDigits: 6,
-          groupLength: 3,
+      ],
+      "@typescript-eslint/no-unused-expressions": [
+        "error",
+        {
+          allowShortCircuit: true,
+          allowTernary: true,
+          allowTaggedTemplates: true,
         },
-      },
-    ],
-    "unicorn/prevent-abbreviations": [
-      "error",
-      {
-        allowList: {
-          db: true,
-          docs: true,
-          env: true,
-          err: true,
-          i: true,
-          param: true,
-          req: true,
-          res: true,
+      ],
+
+      // Unicorn rules
+      "unicorn/filename-case": [
+        "error",
+        {
+          cases: {
+            kebabCase: true,
+            pascalCase: true,
+          },
         },
-      },
-    ],
-  },
-  settings: {
-    "import/resolver": {
-      typescript: {
-        extensions: [".ts", ".tsx", ".d.ts", ".js", ".jsx", ".json", ".node"],
+      ],
+      "unicorn/numeric-separators-style": [
+        "error",
+        {
+          number: {
+            minimumDigits: 6,
+            groupLength: 3,
+          },
+        },
+      ],
+      "unicorn/prevent-abbreviations": [
+        "error",
+        {
+          allowList: {
+            db: true,
+            docs: true,
+            env: true,
+            err: true,
+            i: true,
+            param: true,
+            req: true,
+            res: true,
+          },
+        },
+      ],
+
+      // Prettier rules
+      "prettier/prettier": "error",
+    },
+    settings: {
+      "import/resolver": {
+        typescript: {
+          extensions: [".ts", ".tsx", ".d.ts", ".js", ".jsx", ".json", ".node"],
+        },
       },
     },
   },
-};
+];
