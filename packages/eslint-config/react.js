@@ -33,10 +33,10 @@ export default [
       sourceType: "module",
     },
     plugins: {
-      import: importPlugin,
-      unicorn: unicornPlugin,
-      prettier: prettierPlugin,
       "@typescript-eslint": tseslint.plugin,
+      import: importPlugin,
+      prettier: prettierPlugin,
+      unicorn: unicornPlugin,
     },
     rules: {
       // Base rules
