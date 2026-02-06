@@ -3,7 +3,6 @@ import { FlatCompat } from "@eslint/eslintrc";
 import prettierConfig from "eslint-config-prettier";
 import prettierPlugin from "eslint-plugin-prettier";
 import unicornPlugin from "eslint-plugin-unicorn";
-import cypressPlugin from "eslint-plugin-cypress";
 import globals from "globals";
 
 const compat = new FlatCompat({
@@ -106,17 +105,6 @@ export default [
 
       // Prettier rules
       "prettier/prettier": "error",
-    },
-  },
-
-  // Cypress configuration
-  {
-    files: ["cypress/integration/**.spec.{js,ts,jsx,tsx}"],
-    plugins: {
-      cypress: cypressPlugin,
-    },
-    rules: {
-      ...cypressPlugin.configs.recommended.rules,
     },
   },
 ];
