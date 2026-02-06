@@ -26,12 +26,12 @@ export default [
     files: ["**/*.{js,jsx,ts,tsx}"],
     languageOptions: {
       ecmaVersion: "latest",
-      sourceType: "module",
       globals: {
         ...globals.browser,
         ...globals.es2021,
         ...globals.node,
       },
+      sourceType: "module",
     },
     plugins: {
       import: importPlugin,

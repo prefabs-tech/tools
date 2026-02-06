@@ -23,13 +23,14 @@ export default [
   {
     files: ["**/*.{js,jsx,ts,tsx}"],
     languageOptions: {
-      ecmaVersion: "latest",
-      sourceType: "module",
       globals: {
         ...globals.browser,
         ...globals.es2021,
         ...globals.node,
       },
+      ecmaVersion: "latest",
+      parser: tseslint.parser,
+      sourceType: "module",
     },
     plugins: {
       import: importPlugin,
