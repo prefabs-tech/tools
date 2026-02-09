@@ -9,6 +9,19 @@ export default [
 
   {
     files: ["**/*.{js,jsx,ts,tsx}"],
+    languageOptions: {
+      globals: {
+        ...globals.browser,
+        ...globals.es2021,
+        ...globals.node,
+      },
+      ecmaVersion: "latest",
+      parser: tseslint.parser,
+      parserOptions: {
+        ecmaFeatures: { jsx: true },
+      },
+      sourceType: "module",
+    },
     plugins: {
       react: reactPlugin,
       "react-hooks": reactHooksPlugin,
