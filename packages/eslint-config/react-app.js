@@ -33,6 +33,7 @@ export default [
       ...jsxA11yPlugin.configs.recommended.rules,
       ...reactPlugin.configs.recommended.rules,
       ...reactHooksPlugin.configs.recommended.rules,
+      "jsx-a11y/click-events-have-key-events": "off",
       "react/no-children-prop": "off",
       "react/prop-types": "off",
       "react/react-in-jsx-scope": "off",
