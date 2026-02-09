@@ -9,6 +9,9 @@ Custom ESLint configuration for streamlined linting across projects.
 - `@prefabs.tech/eslint-config` for general typescript projects
 
 ## Installation and usage
+
+**Note:** For CommonJS projects, use `eslint.config.mjs` instead of `eslint.config.js`.
+
 * ### For fastify apis and libraries:
 
   In the root directory of your app or package:
