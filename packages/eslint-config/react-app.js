@@ -1,82 +1,47 @@
-module.exports = {
-  env: {
-    node: true,
-  },
-  extends: [
-    "eslint:recommended",
-    "react-app",
-    "react-app/jest",
-    "plugin:prettier/recommended",
-  ],
-  overrides: [
-    {
-      extends: ["plugin:cypress/recommended"],
-      files: ["cypress/integration/**.spec.{js,ts,jsx,tsx}"],
+import jsxA11yPlugin from "eslint-plugin-jsx-a11y";
+import reactPlugin from "eslint-plugin-react";
+import reactHooksPlugin from "eslint-plugin-react-hooks";
+import globals from "globals";
+import tseslint from "typescript-eslint";
+  
+import baseReactConfig from "./react.js";
+
+export default [
+  ...baseReactConfig,
+
+  {
+    files: ["**/*.{js,jsx,ts,tsx}"],
+    languageOptions: {
+      globals: {
+        ...globals.browser,
+        ...globals.es2021,
+        ...globals.node,
+      },
+      ecmaVersion: "latest",
+      parser: tseslint.parser,
+      parserOptions: {
+        ecmaFeatures: { jsx: true },
+      },
+      sourceType: "module",
     },
-  ],
-  parserOptions: {
-    parser: "@typescript-eslint/parser",
+    plugins: {
+      react: reactPlugin,
+      "react-hooks": reactHooksPlugin,
+      "jsx-a11y": jsxA11yPlugin,
+    },
+    rules: {
+      ...jsxA11yPlugin.configs.recommended.rules,
+      ...reactPlugin.configs.recommended.rules,
+      ...reactHooksPlugin.configs.recommended.rules,
+      "jsx-a11y/click-events-have-key-events": "off",
+      "react/no-children-prop": "off",
+      "react/prop-types": "off",
+      "react/react-in-jsx-scope": "off",
+    },
+    settings: {
+      react: {
+        version: "detect",
+      },
+    },
   },
-  plugins: ["prettier", "unicorn"],
-  root: true,
-  rules: {
-    "brace-style": ["error", "1tbs"],
-    curly: ["error", "all"],
-    "import/order": [
-      1,
-      {
-        alphabetize: {
-          order: "asc",
-          caseInsensitive: true,
-        },
-        groups: [
-          "builtin",
-          "external",
-          "internal",
-          ["parent", "sibling"],
-          "index",
-          "object",
-          "type",
-        ],
-        "newlines-between": "always",
-      },
-    ],
-    "no-console": process.env.NODE_ENV === "production" ? "error" : "warn",
-    "no-debugger": process.env.NODE_ENV === "production" ? "error" : "warn",
-    "prettier/prettier": "error",
-    "unicorn/filename-case": [
-      "error",
-      {
-        cases: {
-          kebabCase: true,
-          pascalCase: true,
-        },
-      },
-    ],
-    "unicorn/numeric-separators-style": [
-      "error",
-      {
-        number: {
-          minimumDigits: 6,
-          groupLength: 3,
-        },
-      },
-    ],
-    "unicorn/prevent-abbreviations": [
-      "error",
-      {
-        allowList: {
-          db: true,
-          docs: true,
-          env: true,
-          err: true,
-          i: true,
-          param: true,
-          params: true,
-          req: true,
-          res: true,
-        },
-      },
-    ],
-  },
-};
+];
