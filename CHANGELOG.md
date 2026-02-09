@@ -1,3 +1,12 @@
+# [0.5.0](https://github.com/prefabs-tech/tools/compare/v0.4.0...v0.5.0) (2026-02-09)
+
+
+### Features
+
+* **eslint-config:** update config for react and react app ([#38](https://github.com/prefabs-tech/tools/issues/38)) ([e7adba5](https://github.com/prefabs-tech/tools/commit/e7adba5691a85aa8c38e73ca158e81c8f5dee1d1))
+
+
+
 # [0.4.0](https://github.com/prefabs-tech/tools/compare/v0.3.0...v0.4.0) (2026-02-05)
 
 
