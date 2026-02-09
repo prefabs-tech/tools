@@ -15,6 +15,8 @@ export default [
     rules: {
       ...reactPlugin.configs.recommended.rules,
       ...reactHooksPlugin.configs.recommended.rules,
+      "react/no-children-prop": "off",
+      "react/prop-types": "off",
       "react/react-in-jsx-scope": "off",
     },
   },
