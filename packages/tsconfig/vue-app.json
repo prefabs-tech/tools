@@ -1,12 +1,6 @@
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
-    "baseUrl": ".",
-    "paths": {
-      "@/*": [
-        "./src/*"
-      ]
-    },
     "lib": ["DOM", "DOM.Iterable", "ESNext", "ScriptHost"],
     "noImplicitAny": true,
     "target": "ESNext",
