@@ -4,6 +4,7 @@
     "allowJs": false,
     "allowSyntheticDefaultImports": true,
     "composite": false,
+    "inlineSourceMap": false,
     "inlineSources": false,
     "lib": ["ESNext", "DOM", "DOM.Iterable", "ScriptHost"],
     "module": "ESNext",
