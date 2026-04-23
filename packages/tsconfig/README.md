@@ -112,7 +112,9 @@ npm run typecheck
 
 ## Configuration Options
 
-The base configuration (`tsconfig.json`) includes the following compiler options:
+The base configuration (`tsconfig.json`) includes the following compiler options.
+
+For detailed information about each option, see the [TypeScript TSConfig Reference](https://www.typescriptlang.org/tsconfig/).
 
 | Option | Value | Description |
 |--------|-------|-------------|
