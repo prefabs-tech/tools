@@ -19,9 +19,6 @@
     "vue.json",
     "vue-app.json"
   ],
-  "dependencies": {
-    "@vue/tsconfig": "0.1.3"
-  },
   "publishConfig": {
     "access": "public"
   }
