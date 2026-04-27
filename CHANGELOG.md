@@ -1,3 +1,15 @@
+# [0.6.0](https://github.com/prefabs-tech/tools/compare/v0.5.0...v0.6.0) (2026-04-27)
+
+### Breaking Changes
+
+- **tsconfig/fastify-api:** `isolatedModules` is now `true` (inherited from base) — code using `const enum` or certain ambient module re-exports will fail ([#41](https://github.com/prefabs-tech/tools/issues/41)) ([a9f15a9](https://github.com/prefabs-tech/tools/commit/a9f15a9935e743bd6dfc159fb89cb3dbeae6321f))
+- **tsconfig/vue-app:** `noImplicitAny` and `verbatimModuleSyntax` are now `true`; no longer extends `@vue/tsconfig/tsconfig.web.json` ([#41](https://github.com/prefabs-tech/tools/issues/41)) ([a9f15a9](https://github.com/prefabs-tech/tools/commit/a9f15a9935e743bd6dfc159fb89cb3dbeae6321f))
+- **tsconfig/react-app:** `composite` is now `true` (inherited from base), which conflicts with `noEmit: true` in some tooling ([#41](https://github.com/prefabs-tech/tools/issues/41)) ([a9f15a9](https://github.com/prefabs-tech/tools/commit/a9f15a9935e743bd6dfc159fb89cb3dbeae6321f))
+
+### Refactoring
+
+- **tsconfig:** simplify configuration files and remove unused dependencies ([#41](https://github.com/prefabs-tech/tools/issues/41)) ([a9f15a9](https://github.com/prefabs-tech/tools/commit/a9f15a9935e743bd6dfc159fb89cb3dbeae6321f))
+
 # [0.5.0](https://github.com/prefabs-tech/tools/compare/v0.4.0...v0.5.0) (2026-02-09)
 
 ### Features
