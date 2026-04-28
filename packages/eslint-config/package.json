@@ -41,7 +41,6 @@
     "globals": "17.3.0",
     "stylelint": "17.9.1",
     "stylelint-config-prettier": "9.0.5",
-    "stylelint-config-recommended-vue": "1.6.1",
     "stylelint-config-standard": "40.0.0",
     "stylelint-order": "8.1.1",
     "typescript-eslint": "8.54.0",
@@ -50,13 +49,20 @@
   "devDependencies": {
     "eslint": "9.39.4",
     "prettier": "3.8.3",
+    "stylelint-config-recommended-vue": "1.6.1",
     "typescript": "5.9.3"
   },
   "peerDependencies": {
     "eslint": ">=9.0.0",
     "prettier": ">=3.3.3",
     "stylelint": ">=17.0.0",
+    "stylelint-config-recommended-vue": ">=1.6.0",
     "typescript": ">=4.9.5"
+  },
+  "peerDependenciesMeta": {
+    "stylelint-config-recommended-vue": {
+      "optional": true
+    }
   },
   "publishConfig": {
     "access": "public"
