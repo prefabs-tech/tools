@@ -4,6 +4,5 @@ export default {
   ...baseConfig,
   extends: [
     "stylelint-config-recommended-vue",
-    "stylelint-config-prettier",
   ],
 };
