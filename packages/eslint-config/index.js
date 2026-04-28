@@ -1,6 +1,7 @@
 import js from "@eslint/js";
 import importPlugin from "eslint-plugin-import";
 import nodePlugin from "eslint-plugin-n";
+import perfectionistPlugin from "eslint-plugin-perfectionist";
 import prettierPluginRecommened from "eslint-plugin-prettier/recommended";
 import promisePlugin from "eslint-plugin-promise";
 import unicornPlugin from "eslint-plugin-unicorn";
@@ -26,6 +27,7 @@ export default [
     plugins: {
       n: nodePlugin,
       import: importPlugin,
+      perfectionist: perfectionistPlugin,
       promise: promisePlugin,
       unicorn: unicornPlugin,
     },
@@ -55,25 +57,11 @@ export default [
       // Import rules
       ...importPlugin.configs.recommended.rules,
       ...importPlugin.configs.typescript.rules,
-      "import/order": [
-        "error",
-        {
-          alphabetize: {
-            order: "asc",
-            caseInsensitive: true,
-          },
-          groups: [
-            "builtin",
-            "external",
-            "internal",
-            ["parent", "sibling"],
-            "index",
-            "object",
-            "type",
-          ],
-          "newlines-between": "always",
-        },
-      ],
+      "import/order": "off",
+      "sort-imports": "off",
+
+      // Perfectionist rules
+      ...perfectionistPlugin.configs["recommended-natural"].rules,
 
       // Unicorn rules
       ...unicornPlugin.configs.recommended.rules,

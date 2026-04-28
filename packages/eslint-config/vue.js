@@ -1,6 +1,7 @@
 import js from "@eslint/js";
 import prettierConfig from "eslint-config-prettier";
 import importPlugin from "eslint-plugin-import";
+import perfectionistPlugin from "eslint-plugin-perfectionist";
 import prettierPlugin from "eslint-plugin-prettier";
 import unicornPlugin from "eslint-plugin-unicorn";
 import vuePlugin from "eslint-plugin-vue";
@@ -41,6 +42,7 @@ export default [
     },
     plugins: {
       import: importPlugin,
+      perfectionist: perfectionistPlugin,
       prettier: prettierPlugin,
       unicorn: unicornPlugin,
       vue: vuePlugin,
@@ -53,25 +55,11 @@ export default [
       // Import rules
       ...importPlugin.configs.recommended.rules,
       ...importPlugin.configs.typescript.rules,
-      "import/order": [
-        "error",
-        {
-          alphabetize: {
-            order: "asc",
-            caseInsensitive: true,
-          },
-          groups: [
-            "builtin",
-            "external",
-            "internal",
-            ["parent", "sibling"],
-            "index",
-            "object",
-            "type",
-          ],
-          "newlines-between": "always",
-        },
-      ],
+      "import/order": "off",
+      "sort-imports": "off",
+
+      // Perfectionist rules
+      ...perfectionistPlugin.configs["recommended-natural"].rules,
 
       // Prettier rules
       ...prettierPlugin.configs.recommended.rules,
