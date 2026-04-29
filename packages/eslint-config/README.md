@@ -123,7 +123,7 @@ Custom ESLint configuration for streamlined linting across projects.
 
 - ### For CSS/SCSS linting:
 
-  **For React, Fastify, and general projects:**
+  **For React and general projects:**
 
   Install dependencies:
 
