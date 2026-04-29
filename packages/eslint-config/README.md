@@ -8,8 +8,6 @@ Custom ESLint configuration for streamlined linting across projects.
 - `@prefabs.tech/eslint-config/react` for react libraries
 - `@prefabs.tech/eslint-config/react-app` for react apps
 - `@prefabs.tech/eslint-config/vue` for vue apps and libraries
-- `@prefabs.tech/eslint-config/stylelint` for CSS/SCSS linting (React, general projects)
-- `@prefabs.tech/eslint-config/stylelint-vue` for CSS/SCSS linting in Vue projects
 - `@prefabs.tech/eslint-config` for general typescript projects
 
 ## Installation and usage
@@ -121,40 +119,6 @@ Custom ESLint configuration for streamlined linting across projects.
   export default config;
   ```
 
-- ### For CSS/SCSS linting:
-
-  **For React and general projects:**
-
-  Install dependencies:
-
-  ```sh
-  npm i -D @prefabs.tech/eslint-config stylelint stylelint-config-standard stylelint-order
-  ```
-
-  Create a `stylelint.config.js` file:
-
-  ```js
-  import stylelintConfig from "@prefabs.tech/eslint-config/stylelint.js";
-
-  export default stylelintConfig;
-  ```
-
-  **For Vue projects:**
-
-  Install dependencies:
-
-  ```sh
-  npm i -D @prefabs.tech/eslint-config stylelint stylelint-config-recommended-vue stylelint-order
-  ```
-
-  Create a `stylelint.config.js` file:
-
-  ```js
-  import stylelintConfig from "@prefabs.tech/eslint-config/stylelint-vue.js";
-
-  export default stylelintConfig;
-  ```
-
 ## Adding linting scripts
 
 In your `package.json`, add the following commands to the `scripts` section:
@@ -164,12 +128,6 @@ In your `package.json`, add the following commands to the `scripts` section:
   ```json
   "lint": "eslint .",
   "lint:fix": "eslint . --fix"
-  ```
-
-- For CSS/SCSS linting:
-  ```json
-  "stylelint": "stylelint \"src/**/*.{css,vue}\"",
-  "stylelint:fix": "stylelint \"src/**/*.{css,vue}\" --fix",
   ```
 
 ## Running linting
