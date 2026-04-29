@@ -8,7 +8,7 @@ Custom ESLint configuration for streamlined linting across projects.
 - `@prefabs.tech/eslint-config/react` for react libraries
 - `@prefabs.tech/eslint-config/react-app` for react apps
 - `@prefabs.tech/eslint-config/vue` for vue apps and libraries
-- `@prefabs.tech/eslint-config/stylelint` for CSS/SCSS linting (React, Fastify, general projects)
+- `@prefabs.tech/eslint-config/stylelint` for CSS/SCSS linting (React, general projects)
 - `@prefabs.tech/eslint-config/stylelint-vue` for CSS/SCSS linting in Vue projects
 - `@prefabs.tech/eslint-config` for general typescript projects
 
