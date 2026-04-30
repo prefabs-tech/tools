@@ -1,6 +1,17 @@
 # [0.7.0](https://github.com/prefabs-tech/tools/compare/v0.6.0...v0.7.0) (2026-04-30)
 
+### Breaking Changes
 
+- **eslint-config:** `import/order` and `sort-imports` rules are replaced by `eslint-plugin-perfectionist` (`recommended-natural`) across all configs — existing projects will need to reorder imports to match the new natural sort order ([#46](https://github.com/prefabs-tech/tools/issues/46)) ([494ba21](https://github.com/prefabs-tech/tools/commit/494ba2167eaa230046c60e6f7297343a87a5c7d4))
+- **eslint-config/fastify:** `@typescript-eslint/no-explicit-any` is now `"error"` — previously unconfigured, so code using `any` types will now fail linting ([#46](https://github.com/prefabs-tech/tools/issues/46)) ([494ba21](https://github.com/prefabs-tech/tools/commit/494ba2167eaa230046c60e6f7297343a87a5c7d4))
+
+### Features
+
+- **stylelint-config:** add new `@prefabs.tech/stylelint-config` package with base and Vue configurations, using `stylelint-config-standard` and `stylelint-order` with alphabetical property ordering ([#46](https://github.com/prefabs-tech/tools/issues/46)) ([494ba21](https://github.com/prefabs-tech/tools/commit/494ba2167eaa230046c60e6f7297343a87a5c7d4))
+
+### Refactoring
+
+- **eslint-config:** add `eslint-plugin-perfectionist` and replace `import/order` with `perfectionist/recommended-natural` rules across base, react, and vue configurations ([#46](https://github.com/prefabs-tech/tools/issues/46)) ([494ba21](https://github.com/prefabs-tech/tools/commit/494ba2167eaa230046c60e6f7297343a87a5c7d4))
 
 # [0.6.0](https://github.com/prefabs-tech/tools/compare/v0.5.0...v0.6.0) (2026-04-27)
 
