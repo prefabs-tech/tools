@@ -1,8 +1,9 @@
 import js from "@eslint/js";
 import prettierConfig from "eslint-config-prettier";
 import importPlugin from "eslint-plugin-import";
-import unicornPlugin from "eslint-plugin-unicorn";
+import perfectionistPlugin from "eslint-plugin-perfectionist";
 import prettierPlugin from "eslint-plugin-prettier";
+import unicornPlugin from "eslint-plugin-unicorn";
 import globals from "globals";
 import tseslint from "typescript-eslint";
 
@@ -35,6 +36,7 @@ export default [
     plugins: {
       "@typescript-eslint": tseslint.plugin,
       import: importPlugin,
+      perfectionist: perfectionistPlugin,
       prettier: prettierPlugin,
       unicorn: unicornPlugin,
     },
@@ -44,25 +46,11 @@ export default [
       curly: ["error", "all"],
 
       // Imports rules
-      "import/order": [
-      1,
-      {
-        alphabetize: {
-          order: "asc",
-          caseInsensitive: true,
-        },
-        groups: [
-          "builtin",
-          "external",
-          "internal",
-          ["parent", "sibling"],
-          "index",
-          "object",
-          "type",
-        ],
-        "newlines-between": "always",
-      },
-    ],
+      "import/order": "off",
+      "sort-imports": "off",
+
+      // Perfectionist rules
+      ...perfectionistPlugin.configs["recommended-natural"].rules,
 
       "no-console": process.env.NODE_ENV === "production" ? "error" : "warn",
       "no-debugger": process.env.NODE_ENV === "production" ? "error" : "warn",

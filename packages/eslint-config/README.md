@@ -1,7 +1,9 @@
 # @prefabs.tech/eslint-config
+
 Custom ESLint configuration for streamlined linting across projects.
 
 ## Supported configurations:
+
 - `@prefabs.tech/eslint-config/fastify` fastify apis and libraries
 - `@prefabs.tech/eslint-config/react` for react libraries
 - `@prefabs.tech/eslint-config/react-app` for react apps
@@ -12,7 +14,7 @@ Custom ESLint configuration for streamlined linting across projects.
 
 **Note:** For CommonJS projects, use `eslint.config.mjs` instead of `eslint.config.js`.
 
-* ### For fastify apis and libraries:
+- ### For fastify apis and libraries:
 
   In the root directory of your app or package:
 
@@ -30,7 +32,7 @@ Custom ESLint configuration for streamlined linting across projects.
   export default fastifyConfig;
   ```
 
-* ### For react libraries:
+- ### For react libraries:
 
   In the root directory of your the react package:
 
@@ -48,7 +50,7 @@ Custom ESLint configuration for streamlined linting across projects.
   export default reactConfig;
   ```
 
-* ### For react apps:
+- ### For react apps:
 
   In the root directory of the react app:
 
@@ -60,13 +62,13 @@ Custom ESLint configuration for streamlined linting across projects.
 
   Create a `eslint.config.js` file:
 
-    ```js
-    import reactConfig from "@prefabs.tech/eslint-config/react-app.js";
+  ```js
+  import reactConfig from "@prefabs.tech/eslint-config/react-app.js";
 
-    export default reactConfig;
-    ```
+  export default reactConfig;
+  ```
 
-* ### For vue apps and libraries:
+- ### For vue apps and libraries:
 
   In the root directory of your app or package:
 
@@ -94,12 +96,13 @@ Custom ESLint configuration for streamlined linting across projects.
     {
       rules: {
         "vue/no-reserved-component-names": "off",
-      }
-    }
+      },
+    },
   ];
   ```
 
-* ### For general typescript projects:
+- ### For general typescript projects:
+
   In the root directory of your app or package:
 
   Install dependencies:
@@ -117,15 +120,18 @@ Custom ESLint configuration for streamlined linting across projects.
   ```
 
 ## Adding linting scripts
+
 In your `package.json`, add the following commands to the `scripts` section:
 
-* For typescript or react projects:
+- For typescript or react projects:
+
   ```json
   "lint": "eslint .",
   "lint:fix": "eslint . --fix"
   ```
 
 ## Running linting
+
 Run the following command to lint your code:
 
 ```bash
