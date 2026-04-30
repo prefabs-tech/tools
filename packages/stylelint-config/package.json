@@ -1,6 +1,6 @@
 {
   "name": "@prefabs.tech/stylelint-config",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "description": "Stylelint config",
   "homepage": "https://github.com/prefabs-tech/tools/tree/main/packages/stylelint-config#readme",
   "repository": {
