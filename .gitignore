@@ -1,6 +1,7 @@
+**/coverage
+**/dist
 **/.env*
 !**/.env.example
-**/dist
 **/*.log*
 **/node_modules
 .turbo

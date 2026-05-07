@@ -16,6 +16,7 @@
     "build": "turbo run build",
     "lint": "turbo run lint",
     "lint:fix": "turbo run lint:fix",
+    "lint:md": "pnpx prettier --write '*.md' 'docs/**/*.md' '.claude/**/*.md'",
     "prepare": "husky",
     "publish": "npx shipjs trigger",
     "release": "npx shipjs prepare",
