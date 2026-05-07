@@ -13,11 +13,6 @@ export default defineConfig(({ mode }) => {
         fileName: (format) => `PrefabsTechToolsUtilities.${format}.js`,
         name: "PrefabsTechToolsUtilities",
       },
-      rollupOptions: {
-        output: {
-          exports: "named",
-        },
-      },
       target: "esnext",
     },
     resolve: {
