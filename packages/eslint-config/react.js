@@ -91,7 +91,7 @@ export default [
           },
         },
       ],
-      "unicorn/prevent-abbreviations": [
+      "unicorn/name-replacements ": [
         "error",
         {
           allowList: {

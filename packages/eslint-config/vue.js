@@ -108,7 +108,7 @@ export default [
       "unicorn/prefer-query-selector": "off",
       "unicorn/prefer-structured-clone": "off",
       "unicorn/prefer-type-error": "off",
-      "unicorn/prevent-abbreviations": [
+      "unicorn/name-replacements ": [
         "error",
         {
           allowList: {
