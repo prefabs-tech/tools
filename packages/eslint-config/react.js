@@ -91,7 +91,7 @@ export default [
           },
         },
       ],
-      "unicorn/name-replacements ": [
+      "unicorn/name-replacements": [
         "error",
         {
           allowList: {

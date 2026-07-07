@@ -94,7 +94,7 @@ export default [
         },
       ],
       "unicorn/prefer-structured-clone": "off",
-      "unicorn/name-replacements ": [
+      "unicorn/name-replacements": [
         "error",
         {
           allowList: {
