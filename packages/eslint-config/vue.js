@@ -99,6 +99,7 @@ export default [
       "unicorn/no-subtraction-comparison": "off",
       "unicorn/no-top-level-assignment-in-function": "off",
       "unicorn/no-top-level-side-effects": "off",
+      "unicorn/no-useless-else": "off",
       "unicorn/numeric-separators-style": [
         "error",
         {
@@ -112,6 +113,7 @@ export default [
       "unicorn/prefer-array-some": "off",
       "unicorn/prefer-export-from": "off",
       "unicorn/prefer-global-this": "off",
+      "unicorn/prefer-logical-operator-over-ternary": "off",
       "unicorn/prefer-math-constants": "off",
       "unicorn/prefer-number-coercion": "off",
       "unicorn/prefer-observer-apis": "off",
