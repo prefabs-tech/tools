@@ -64,16 +64,21 @@ export default [
       // Prettier rules
       ...prettierPlugin.configs.recommended.rules,
       "prettier/prettier": "error",
+      "preserve-caught-error": "off",
 
       // Unicorn rules
       ...unicornPlugin.configs.recommended.rules,
+      "unicorn/better-dom-traversing": "off",
+      "unicorn/consistent-boolean-name": "off",
       "unicorn/consistent-function-scoping": "off",
+      "unicorn/default-export-style": "off",
       "unicorn/filename-case": [
         "error",
         {
           cases: {
             kebabCase: true,
             pascalCase: true,
+            camelCase: true,
           },
         },
       ],
@@ -87,11 +92,18 @@ export default [
           },
         },
       ],
+      "unicorn/max-nested-calls": "off",
       "unicorn/no-abusive-eslint-disable": "off",
       "unicorn/no-array-callback-reference": "off",
       "unicorn/no-array-reduce": "off",
+      "unicorn/no-computed-property-existence-check": "off",
+      "unicorn/no-declarations-before-early-exit": "off",
       "unicorn/no-negated-condition": "off",
       "unicorn/no-null": "off",
+      "unicorn/no-subtraction-comparison": "off",
+      "unicorn/no-top-level-assignment-in-function": "off",
+      "unicorn/no-top-level-side-effects": "off",
+      "unicorn/no-useless-else": "off",
       "unicorn/numeric-separators-style": [
         "error",
         {
@@ -103,12 +115,21 @@ export default [
       ],
       "unicorn/no-useless-undefined": "off",
       "unicorn/prefer-array-some": "off",
+      "unicorn/prefer-await": "off",
       "unicorn/prefer-export-from": "off",
       "unicorn/prefer-global-this": "off",
+      "unicorn/prefer-logical-operator-over-ternary": "off",
+      "unicorn/prefer-math-constants": "off",
+      "unicorn/prefer-minimal-ternary": "off",
+      "unicorn/prefer-number-coercion": "off",
+      "unicorn/prefer-observer-apis": "off",
       "unicorn/prefer-query-selector": "off",
       "unicorn/prefer-structured-clone": "off",
+      "unicorn/prefer-ternary": "off",
+      "unicorn/prefer-top-level-await": "off",
       "unicorn/prefer-type-error": "off",
-      "unicorn/prevent-abbreviations": [
+      "unicorn/require-array-sort-compare": "off",
+      "unicorn/name-replacements": [
         "error",
         {
           allowList: {
@@ -133,6 +154,7 @@ export default [
       "vue/order-in-components": "off",
       "no-console": process.env.NODE_ENV === "production" ? "error" : "warn",
       "no-debugger": process.env.NODE_ENV === "production" ? "error" : "warn",
+      "no-useless-assignment": "off",
     },
     settings: {
       "import/resolver": {
@@ -162,13 +184,6 @@ export default [
         "vite",
         "rollup",
       ],
-    },
-  },
-  // Test files configuration
-  {
-    files: ["**/*.spec.{js,ts}"],
-    rules: {
-      // Add any test-specific rules here
     },
   },
   // Prettier config should be last to override any conflicting rules

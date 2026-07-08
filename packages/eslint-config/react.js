@@ -91,7 +91,7 @@ export default [
           },
         },
       ],
-      "unicorn/prevent-abbreviations": [
+      "unicorn/name-replacements": [
         "error",
         {
           allowList: {
@@ -106,6 +106,7 @@ export default [
           },
         },
       ],
+      "unicorn/prefer-math-constants": "off",
 
       // Prettier rules
       "prettier/prettier": "error",

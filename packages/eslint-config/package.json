@@ -22,33 +22,33 @@
     "sort-package": "npx sort-package-json"
   },
   "dependencies": {
-    "@eslint/js": "9.39.4",
+    "@eslint/js": "10.0.1",
     "eslint-config-prettier": "10.1.8",
     "eslint-import-resolver-alias": "1.1.2",
-    "eslint-import-resolver-typescript": "4.4.4",
+    "eslint-import-resolver-typescript": "4.4.5",
     "eslint-plugin-import": "2.32.0",
     "eslint-plugin-jsx-a11y": "6.10.2",
-    "eslint-plugin-n": "17.20.0",
-    "eslint-plugin-perfectionist": "5.9.0",
-    "eslint-plugin-prettier": "5.5.5",
-    "eslint-plugin-promise": "7.2.1",
+    "eslint-plugin-n": "18.2.1",
+    "eslint-plugin-perfectionist": "5.10.0",
+    "eslint-plugin-prettier": "5.5.6",
+    "eslint-plugin-promise": "7.3.0",
     "eslint-plugin-react": "7.37.5",
-    "eslint-plugin-react-hooks": "7.0.1",
-    "eslint-plugin-unicorn": "62.0.0",
-    "eslint-plugin-vue": "10.7.0",
-    "globals": "17.3.0",
-    "typescript-eslint": "8.54.0",
-    "vue-eslint-parser": "10.2.0"
+    "eslint-plugin-react-hooks": "7.1.1",
+    "eslint-plugin-unicorn": "71.1.0",
+    "eslint-plugin-vue": "10.9.2",
+    "globals": "17.7.0",
+    "typescript-eslint": "8.63.0",
+    "vue-eslint-parser": "10.4.1"
   },
   "devDependencies": {
-    "eslint": "9.39.4",
-    "prettier": "3.8.3",
-    "typescript": "5.9.3"
+    "eslint": "10.6.0",
+    "prettier": "3.9.4",
+    "typescript": "6.0.3"
   },
   "peerDependencies": {
-    "eslint": ">=9.0.0",
+    "eslint": ">=10.0.0",
     "prettier": ">=3.3.3",
-    "typescript": ">=4.9.5"
+    "typescript": ">=6.0.0"
   },
   "publishConfig": {
     "access": "public"

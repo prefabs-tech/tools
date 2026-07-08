@@ -93,8 +93,9 @@ export default [
           },
         },
       ],
+      "unicorn/prefer-math-constants": "off",
       "unicorn/prefer-structured-clone": "off",
-      "unicorn/prevent-abbreviations": [
+      "unicorn/name-replacements": [
         "error",
         {
           allowList: {
@@ -120,10 +121,6 @@ export default [
         node: true,
       },
     },
-  },
-  {
-    files: ["**/*.spec.ts"],
-    // overrides for spec files if any (legacy file had empty overrides for this pattern)
   },
   prettierPluginRecommened,
 ];
