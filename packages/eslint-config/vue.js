@@ -67,6 +67,7 @@ export default [
 
       // Unicorn rules
       ...unicornPlugin.configs.recommended.rules,
+      "unicorn/better-dom-traversing": "off",
       "unicorn/consistent-boolean-name": "off",
       "unicorn/consistent-function-scoping": "off",
       "unicorn/filename-case": [
@@ -111,6 +112,7 @@ export default [
       "unicorn/prefer-global-this": "off",
       "unicorn/prefer-math-constants": "off",
       "unicorn/prefer-number-coercion": "off",
+      "unicorn/prefer-observer-apis": "off",
       "unicorn/prefer-query-selector": "off",
       "unicorn/prefer-structured-clone": "off",
       "unicorn/prefer-ternary": "off",
