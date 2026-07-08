@@ -105,6 +105,7 @@ export default [
       "unicorn/prefer-array-some": "off",
       "unicorn/prefer-export-from": "off",
       "unicorn/prefer-global-this": "off",
+      "unicorn/prefer-math-constants": "off",
       "unicorn/prefer-query-selector": "off",
       "unicorn/prefer-structured-clone": "off",
       "unicorn/prefer-type-error": "off",
@@ -166,9 +167,9 @@ export default [
   },
   // Test files configuration
   {
-    files: ["**/*.spec.{js,ts}"],
+    files: ["**/*.spec.{js,ts}", "**/*.test.{js,ts}"],
     rules: {
-      // Add any test-specific rules here
+      "unicorn/filename-case": "off",
     },
   },
   // Prettier config should be last to override any conflicting rules

@@ -93,6 +93,7 @@ export default [
           },
         },
       ],
+      "unicorn/prefer-math-constants": "off",
       "unicorn/prefer-structured-clone": "off",
       "unicorn/name-replacements": [
         "error",
@@ -122,8 +123,10 @@ export default [
     },
   },
   {
-    files: ["**/*.spec.ts"],
-    // overrides for spec files if any (legacy file had empty overrides for this pattern)
+    files: ["**/*.spec.ts", "**/*.test.ts"],
+    rules: {
+      "unicorn/filename-case": "off",
+    },
   },
   prettierPluginRecommened,
 ];

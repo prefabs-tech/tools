@@ -106,6 +106,7 @@ export default [
           },
         },
       ],
+      "unicorn/prefer-math-constants": "off",
 
       // Prettier rules
       "prettier/prettier": "error",
