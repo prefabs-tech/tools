@@ -119,14 +119,15 @@ export default [
       "unicorn/prefer-global-this": "off",
       "unicorn/prefer-logical-operator-over-ternary": "off",
       "unicorn/prefer-math-constants": "off",
-      " unicorn/prefer-minimal-ternary": "off",
+      "unicorn/prefer-minimal-ternary": "off",
       "unicorn/prefer-number-coercion": "off",
       "unicorn/prefer-observer-apis": "off",
       "unicorn/prefer-query-selector": "off",
       "unicorn/prefer-structured-clone": "off",
       "unicorn/prefer-ternary": "off",
+      "unicorn/prefer-top-level-await": "off",
       "unicorn/prefer-type-error": "off",
-      " unicorn/require-array-sort-compare": "off",
+      "unicorn/require-array-sort-compare": "off",
       "unicorn/name-replacements": [
         "error",
         {
@@ -152,6 +153,7 @@ export default [
       "vue/order-in-components": "off",
       "no-console": process.env.NODE_ENV === "production" ? "error" : "warn",
       "no-debugger": process.env.NODE_ENV === "production" ? "error" : "warn",
+      "no-useless-assignment": "off",
     },
     settings: {
       "import/resolver": {
