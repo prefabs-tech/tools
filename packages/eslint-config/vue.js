@@ -90,8 +90,10 @@ export default [
       "unicorn/no-abusive-eslint-disable": "off",
       "unicorn/no-array-callback-reference": "off",
       "unicorn/no-array-reduce": "off",
+      "unicorn/no-computed-property-existence-check": "off",
       "unicorn/no-negated-condition": "off",
       "unicorn/no-null": "off",
+      "unicorn/no-top-level-side-effects": "off",
       "unicorn/numeric-separators-style": [
         "error",
         {
