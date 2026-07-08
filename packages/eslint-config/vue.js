@@ -64,6 +64,7 @@ export default [
       // Prettier rules
       ...prettierPlugin.configs.recommended.rules,
       "prettier/prettier": "error",
+      "preserve-caught-error": "off",
 
       // Unicorn rules
       ...unicornPlugin.configs.recommended.rules,
@@ -76,6 +77,7 @@ export default [
           cases: {
             kebabCase: true,
             pascalCase: true,
+            camelCase: true,
           },
         },
       ],
@@ -117,12 +119,14 @@ export default [
       "unicorn/prefer-global-this": "off",
       "unicorn/prefer-logical-operator-over-ternary": "off",
       "unicorn/prefer-math-constants": "off",
+      " unicorn/prefer-minimal-ternary": "off",
       "unicorn/prefer-number-coercion": "off",
       "unicorn/prefer-observer-apis": "off",
       "unicorn/prefer-query-selector": "off",
       "unicorn/prefer-structured-clone": "off",
       "unicorn/prefer-ternary": "off",
       "unicorn/prefer-type-error": "off",
+      " unicorn/require-array-sort-compare": "off",
       "unicorn/name-replacements": [
         "error",
         {
@@ -177,13 +181,6 @@ export default [
         "vite",
         "rollup",
       ],
-    },
-  },
-  // Test files configuration
-  {
-    files: ["**/*.spec.{js,ts}", "**/*.test.{js,ts}"],
-    rules: {
-      "unicorn/filename-case": "off",
     },
   },
   // Prettier config should be last to override any conflicting rules

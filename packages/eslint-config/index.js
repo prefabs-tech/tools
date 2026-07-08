@@ -122,11 +122,5 @@ export default [
       },
     },
   },
-  {
-    files: ["**/*.spec.ts", "**/*.test.ts"],
-    rules: {
-      "unicorn/filename-case": "off",
-    },
-  },
   prettierPluginRecommened,
 ];
