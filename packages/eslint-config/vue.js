@@ -67,6 +67,7 @@ export default [
 
       // Unicorn rules
       ...unicornPlugin.configs.recommended.rules,
+      "unicorn/consistent-boolean-name": "off",
       "unicorn/consistent-function-scoping": "off",
       "unicorn/filename-case": [
         "error",
@@ -91,6 +92,7 @@ export default [
       "unicorn/no-array-callback-reference": "off",
       "unicorn/no-array-reduce": "off",
       "unicorn/no-computed-property-existence-check": "off",
+      "unicorn/no-declarations-before-early-exit": "off",
       "unicorn/no-negated-condition": "off",
       "unicorn/no-null": "off",
       "unicorn/no-top-level-side-effects": "off",
@@ -108,8 +110,10 @@ export default [
       "unicorn/prefer-export-from": "off",
       "unicorn/prefer-global-this": "off",
       "unicorn/prefer-math-constants": "off",
+      "unicorn/prefer-number-coercion": "off",
       "unicorn/prefer-query-selector": "off",
       "unicorn/prefer-structured-clone": "off",
+      "unicorn/prefer-ternary": "off",
       "unicorn/prefer-type-error": "off",
       "unicorn/name-replacements": [
         "error",
