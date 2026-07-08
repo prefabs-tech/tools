@@ -96,6 +96,8 @@ export default [
       "unicorn/no-declarations-before-early-exit": "off",
       "unicorn/no-negated-condition": "off",
       "unicorn/no-null": "off",
+      "unicorn/no-subtraction-comparison": "off",
+      "unicorn/no-top-level-assignment-in-function": "off",
       "unicorn/no-top-level-side-effects": "off",
       "unicorn/numeric-separators-style": [
         "error",
