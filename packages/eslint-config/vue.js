@@ -71,6 +71,7 @@ export default [
       "unicorn/better-dom-traversing": "off",
       "unicorn/consistent-boolean-name": "off",
       "unicorn/consistent-function-scoping": "off",
+      "unicorn/default-export-style": "off",
       "unicorn/filename-case": [
         "error",
         {
