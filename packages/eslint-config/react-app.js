@@ -35,6 +35,8 @@ export default [
       ...reactHooksPlugin.configs.recommended.rules,
       "@eslint-react/no-children-prop": "off",
       "jsx-a11y/click-events-have-key-events": "off",
+      "no-useless-assignment": "off",
+      "preserve-caught-error": "off",
       "react/no-children-prop": "off",
       "react/prop-types": "off",
       "react/react-in-jsx-scope": "off",
