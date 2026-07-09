@@ -54,6 +54,8 @@ export default [
 
       "no-console": process.env.NODE_ENV === "production" ? "error" : "warn",
       "no-debugger": process.env.NODE_ENV === "production" ? "error" : "warn",
+      "no-useless-assignment": "off",
+      "preserve-caught-error": "off",
 
       // TypeScript rules
       "@typescript-eslint/no-unused-vars": [
