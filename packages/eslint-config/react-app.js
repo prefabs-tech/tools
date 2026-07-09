@@ -1,5 +1,5 @@
 import jsxA11yPlugin from "eslint-plugin-jsx-a11y";
-import reactPlugin from "eslint-plugin-react";
+import reactPlugin from "@eslint-react/eslint-plugin";
 import reactHooksPlugin from "eslint-plugin-react-hooks";
 import globals from "globals";
 import tseslint from "typescript-eslint";
