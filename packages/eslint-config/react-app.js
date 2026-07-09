@@ -25,7 +25,7 @@ export default [
       sourceType: "module",
     },
     plugins: {
-      react: reactPlugin,
+      "@eslint-react": reactPlugin,  
       "react-hooks": reactHooksPlugin,
       "jsx-a11y": jsxA11yPlugin,
     },
@@ -33,6 +33,7 @@ export default [
       ...jsxA11yPlugin.configs.recommended.rules,
       ...reactPlugin.configs.recommended.rules,
       ...reactHooksPlugin.configs.recommended.rules,
+      "@eslint-react/no-children-prop": "off",
       "jsx-a11y/click-events-have-key-events": "off",
       "react/no-children-prop": "off",
       "react/prop-types": "off",
