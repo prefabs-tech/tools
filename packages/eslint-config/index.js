@@ -89,10 +89,13 @@ export default [
           },
         },
       ],
+      "unicorn/max-nested-calls": "off",
       "unicorn/name-replacements": "off",
-      "unicorn/no-computed-property-existence-check": "off",  
+      "unicorn/no-computed-property-existence-check": "off", 
+      "unicorn/no-declarations-before-early-exit": "off", 
       "unicorn/no-error-property-assignment": "off",
       "unicorn/no-return-array-push": "off",
+      "unicorn/no-unsafe-string-replacement": "off",
       "unicorn/numeric-separators-style": [
         "error",
         {
