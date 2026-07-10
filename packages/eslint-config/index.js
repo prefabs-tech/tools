@@ -54,6 +54,8 @@ export default [
         },
       ],
 
+      "preserve-caught-error": "off",
+
       // Import rules
       ...importPlugin.configs.recommended.rules,
       ...importPlugin.configs.typescript.rules,
@@ -87,6 +89,7 @@ export default [
           },
         },
       ],
+      "unicorn/name-replacements": "off",
       "unicorn/no-computed-property-existence-check": "off",  
       "unicorn/no-error-property-assignment": "off",
       "unicorn/no-return-array-push": "off",
@@ -99,8 +102,12 @@ export default [
           },
         },
       ],
+      " unicorn/prefer-await": "off",
+      "unicorn/prefer-includes-over-repeated-comparisons": "off",
       "unicorn/prefer-math-constants": "off",
+      "unicorn/prefer-number-coercion": "off",
       "unicorn/prefer-structured-clone": "off",
+      " unicorn/prefer-ternary": "off",
       "unicorn/name-replacements": [
         "error",
         {
