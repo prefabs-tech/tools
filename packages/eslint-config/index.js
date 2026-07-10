@@ -65,6 +65,9 @@ export default [
 
       // Unicorn rules
       ...unicornPlugin.configs.recommended.rules,
+      "unicorn/consistent-boolean-name": "off",
+      "unicorn/consistent-class-member-order": "off",
+      "unicorn/default-export-style": "off",
       "unicorn/filename-case": [
         "error",
         {
@@ -84,6 +87,9 @@ export default [
           },
         },
       ],
+      "unicorn/no-computed-property-existence-check": "off",  
+      "unicorn/no-error-property-assignment": "off",
+      "unicorn/no-return-array-push": "off",
       "unicorn/numeric-separators-style": [
         "error",
         {
