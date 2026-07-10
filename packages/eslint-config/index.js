@@ -96,6 +96,7 @@ export default [
       "unicorn/no-error-property-assignment": "off",
       "unicorn/no-return-array-push": "off",
       "unicorn/no-unsafe-string-replacement": "off",
+      "unicorn/no-useless-else": "off",
       "unicorn/numeric-separators-style": [
         "error",
         {
