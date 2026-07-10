@@ -102,12 +102,12 @@ export default [
           },
         },
       ],
-      " unicorn/prefer-await": "off",
+      "unicorn/prefer-await": "off",
       "unicorn/prefer-includes-over-repeated-comparisons": "off",
       "unicorn/prefer-math-constants": "off",
       "unicorn/prefer-number-coercion": "off",
       "unicorn/prefer-structured-clone": "off",
-      " unicorn/prefer-ternary": "off",
+      "unicorn/prefer-ternary": "off",
       "unicorn/name-replacements": [
         "error",
         {
