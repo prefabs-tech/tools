@@ -1,11 +1,8 @@
 # [0.8.0](https://github.com/prefabs-tech/tools/compare/v0.7.0...v0.8.0) (2026-05-07)
 
-
 ### Features
 
-* add separate utilities package with parse function ([#48](https://github.com/prefabs-tech/tools/issues/48)) ([fa91db9](https://github.com/prefabs-tech/tools/commit/fa91db99b81976d923a286f4a05248d31cbc5aea))
-
-
+- add separate utilities package with parse function ([#48](https://github.com/prefabs-tech/tools/issues/48)) ([fa91db9](https://github.com/prefabs-tech/tools/commit/fa91db99b81976d923a286f4a05248d31cbc5aea))
 
 # [0.7.0](https://github.com/prefabs-tech/tools/compare/v0.6.0...v0.7.0) (2026-04-30)
 

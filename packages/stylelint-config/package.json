@@ -16,7 +16,7 @@
     "vue.js"
   ],
   "scripts": {
-    "sort-package": "npx sort-package-json"
+    "sort-package": "pnpm dlx sort-package-json"
   },
   "devDependencies": {
     "stylelint": "17.9.1",
