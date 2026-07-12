@@ -1,3 +1,4 @@
+## [0.8.7](https://github.com/prefabs-tech/tools/compare/v0.8.0...v0.8.7) (2026-07-12)
 ## [0.8.6](https://github.com/prefabs-tech/tools/compare/v0.8.0...v0.8.6) (2026-07-12)
 ## [0.8.5](https://github.com/prefabs-tech/tools/compare/v0.8.0...v0.8.5) (2026-07-12)
 ## [0.8.4](https://github.com/prefabs-tech/tools/compare/v0.8.0...v0.8.4) (2026-07-12)
