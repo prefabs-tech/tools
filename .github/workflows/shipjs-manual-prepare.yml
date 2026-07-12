@@ -15,6 +15,8 @@ jobs:
         with:
           fetch-depth: 0
           ref: main
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v6
       - name: Setup node 24
         uses: actions/setup-node@v6
         with:
@@ -23,7 +25,7 @@ jobs:
       - run: |
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git config --global user.name "github-actions[bot]"
-      - run: npm run release -- --yes --no-browse
+      - run: pnpm release -- --yes --no-browse
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SLACK_INCOMING_HOOK: ${{ secrets.SLACK_INCOMING_HOOK }}
