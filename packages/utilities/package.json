@@ -14,10 +14,10 @@
     ".": {
       "types": "./dist/src/index.d.ts",
       "import": "./dist/PrefabsTechToolsUtilities.es.js",
-      "require": "./dist/PrefabsTechToolsUtilities.umd.js"
+      "require": "./dist/PrefabsTechToolsUtilities.umd.cjs"
     }
   },
-  "main": "./dist/PrefabsTechToolsUtilities.umd.js",
+  "main": "./dist/PrefabsTechToolsUtilities.umd.cjs",
   "module": "./dist/PrefabsTechToolsUtilities.es.js",
   "types": "./dist/src/index.d.ts",
   "files": [

@@ -10,7 +10,8 @@ export default defineConfig(({ mode }) => {
     build: {
       lib: {
         entry: resolve(dirname(fileURLToPath(import.meta.url)), "src/index.ts"),
-        fileName: (format) => `PrefabsTechToolsUtilities.${format}.js`,
+        fileName: (format) =>
+          `PrefabsTechToolsUtilities.${format}.${format === "umd" ? "cjs" : "js"}`,
         name: "PrefabsTechToolsUtilities",
       },
       target: "esnext",

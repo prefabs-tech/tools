@@ -77,13 +77,14 @@ export default [
             camelCase: true,
             snakeCase: true,
           },
+          ignore: [/^__test__$/],
         },
       ],
       "unicorn/import-style": [
         "error",
         {
           styles: {
-            "node:path": {
+            path: {
               named: true,
             },
           },
