@@ -27,6 +27,7 @@ publish:
 
 release:
 	@printf "\033[0;32m>>> Prepare packages for release\033[0m\n"
+	@git remote remove origin-with-token 2>/dev/null || true
 	pnpm release
 
 sort-package:
