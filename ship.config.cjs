@@ -14,4 +14,5 @@ module.exports = {
   publishCommand: ({ isYarn, tag, defaultCommand, dir }) => {
     return "pnpm publish --access public";
   },
+  useOidcTokenProvider: true,
 };
