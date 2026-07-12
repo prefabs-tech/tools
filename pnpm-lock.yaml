@@ -114,10 +114,10 @@ importers:
   packages/utilities:
     devDependencies:
       '@prefabs.tech/eslint-config':
-        specifier: 0.8.0
+        specifier: 0.8.1
         version: link:../eslint-config
       '@prefabs.tech/tsconfig':
-        specifier: 0.8.0
+        specifier: 0.8.1
         version: link:../tsconfig
       '@types/node':
         specifier: 25.3.5

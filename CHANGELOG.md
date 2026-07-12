@@ -1,3 +1,10 @@
+## [0.8.1](https://github.com/prefabs-tech/tools/compare/v0.8.0...v0.8.1) (2026-07-12)
+
+
+### Bug Fixes
+
+* emit CommonJS build with .cjs extension so require() works ([57c5e90](https://github.com/prefabs-tech/tools/commit/57c5e900da87c5ecccbda748ce076531009ea700))
+* replace npx with pnpm dlx ([de0828a](https://github.com/prefabs-tech/tools/commit/de0828a09780b4759a1ac6711b20a855c4f3c719))
 # [0.8.0](https://github.com/prefabs-tech/tools/compare/v0.7.0...v0.8.0) (2026-05-07)
 
 ### Features
