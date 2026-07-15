@@ -19,16 +19,16 @@
     "sort-package": "pnpm dlx sort-package-json"
   },
   "devDependencies": {
-    "stylelint": "17.9.1",
+    "stylelint": "17.14.0",
     "stylelint-config-recommended-vue": "1.6.1",
     "stylelint-config-standard": "40.0.0",
     "stylelint-order": "8.1.1"
   },
   "peerDependencies": {
-    "stylelint": ">=17.0.0",
+    "stylelint": ">=17.14.0",
     "stylelint-config-recommended-vue": ">=1.6.1",
     "stylelint-config-standard": ">=40.0.0",
-    "stylelint-order": ">=8.0.0"
+    "stylelint-order": ">=8.1.1"
   },
   "peerDependenciesMeta": {
     "stylelint-config-recommended-vue": {
