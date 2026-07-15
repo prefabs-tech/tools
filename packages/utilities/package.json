@@ -36,7 +36,7 @@
     "@prefabs.tech/tsconfig": "0.8.7",
     "@types/node": "25.9.5",
     "@vitest/coverage-v8": "4.1.10",
-    "eslint": "9.39.5",
+    "eslint": "10.7.0",
     "jsdom": "29.1.1",
     "typescript": "5.9.3",
     "vite": "7.3.6",
