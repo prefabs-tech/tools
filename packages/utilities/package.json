@@ -20,7 +20,9 @@
   "main": "./dist/PrefabsTechToolsUtilities.umd.cjs",
   "module": "./dist/PrefabsTechToolsUtilities.es.js",
   "types": "./dist/src/index.d.ts",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "vite build && tsc --emitDeclarationOnly",
     "lint": "eslint .",
@@ -32,13 +34,13 @@
   "devDependencies": {
     "@prefabs.tech/eslint-config": "0.8.7",
     "@prefabs.tech/tsconfig": "0.8.7",
-    "@types/node": "25.3.5",
-    "@vitest/coverage-v8": "4.1.5",
-    "eslint": "9.39.4",
+    "@types/node": "25.9.5",
+    "@vitest/coverage-v8": "4.1.10",
+    "eslint": "10.7.0",
     "jsdom": "29.1.1",
     "typescript": "5.9.3",
-    "vite": "7.3.2",
-    "vitest": "4.1.5"
+    "vite": "7.3.6",
+    "vitest": "4.1.10"
   },
   "engines": {
     "node": ">=18"
