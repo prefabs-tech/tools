@@ -16,7 +16,8 @@
     "index.js",
     "react.js",
     "react-app.js",
-    "vue.js"
+    "vue.js",
+    "CHANGELOG.md"
   ],
   "scripts": {
     "sort-package": "sort-package-json"

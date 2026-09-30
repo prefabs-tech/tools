@@ -13,7 +13,8 @@
   "main": "index.js",
   "files": [
     "index.js",
-    "vue.js"
+    "vue.js",
+    "CHANGELOG.md"
   ],
   "scripts": {
     "sort-package": "sort-package-json"

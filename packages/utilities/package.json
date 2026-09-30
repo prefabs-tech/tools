@@ -21,7 +21,8 @@
   "module": "./dist/PrefabsTechToolsUtilities.es.js",
   "types": "./dist/src/index.d.ts",
   "files": [
-    "dist"
+    "dist",
+    "CHANGELOG.md"
   ],
   "scripts": {
     "build": "vite build && tsc --emitDeclarationOnly",

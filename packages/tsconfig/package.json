@@ -17,7 +17,8 @@
     "react.json",
     "tsconfig.json",
     "vue.json",
-    "vue-app.json"
+    "vue-app.json",
+    "CHANGELOG.md"
   ],
   "scripts": {
     "sort-package": "sort-package-json"
