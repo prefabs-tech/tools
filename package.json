@@ -37,8 +37,8 @@
   },
   "packageManager": "pnpm@12.8.1",
   "engines": {
-    "node": ">=20",
-    "pnpm": ">=9"
+    "node": ">=24",
+    "pnpm": ">=12"
   },
   "devEngines": {
     "packageManager": {

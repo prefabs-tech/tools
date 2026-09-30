@@ -22,6 +22,9 @@
   "scripts": {
     "sort-package": "sort-package-json"
   },
+  "engines": {
+    "node": ">=22"
+  },
   "publishConfig": {
     "access": "public"
   }
