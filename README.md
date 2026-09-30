@@ -4,30 +4,32 @@
 
 ## Installation & Usage
 
+Common tasks are defined in the `justfile` and require [just](https://github.com/casey/just). Run `just` to list all available recipes.
+
 ### Install dependencies
 
 Install dependencies recursively with this command
 
 ```bash
-make install
+just install
 ```
 
 ### Lint code
 
 ```bash
-make lint
+just lint
 ```
 
 ### Typecheck code
 
 ```bash
-make typecheck
+just typecheck
 ```
 
 ### Test
 
 ```bash
-make test
+just test
 ```
 
 ## Developing locally & testing
