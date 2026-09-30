@@ -21,16 +21,16 @@
     "publish": "pnpm dlx shipjs trigger",
     "release": "pnpm dlx shipjs prepare",
     "sort-package": "pnpm dlx sort-package-json && turbo run sort-package",
-    "test": "turbo run test --parallel",
+    "test": "turbo run test",
     "typecheck": "turbo run typecheck"
   },
   "devDependencies": {
-    "@commitlint/cli": "19.5.0",
-    "@commitlint/config-conventional": "19.5.0",
-    "@types/node": "22.6.2",
+    "@commitlint/cli": "21.2.3",
+    "@commitlint/config-conventional": "21.2.3",
+    "@types/node": "26.6.3",
     "husky": "9.1.7",
-    "shipjs": "0.27.0",
-    "turbo": "2.1.3",
+    "shipjs": "0.28.4",
+    "turbo": "2.11.5",
     "typescript": "5.5.4"
   },
   "packageManager": "pnpm@10.13.1",
