@@ -1,11 +1,33 @@
 const { execFileSync } = require("node:child_process");
-const { existsSync, readdirSync, writeFileSync } = require("node:fs");
+const {
+  existsSync,
+  readdirSync,
+  readFileSync,
+  realpathSync,
+  writeFileSync,
+} = require("node:fs");
 const { join } = require("node:path");
+
+// Absolute path to the angular preset pinned in the root package.json.
+// Passing the preset by name would let conventional-changelog pick up whichever
+// version pnpm hoisted (e.g. shipjs's older one, which it cannot render).
+const resolvePreset = (dir) => {
+  const presetDir = realpathSync(
+    join(dir, "node_modules", "conventional-changelog-angular"),
+  );
+  const { exports } = JSON.parse(
+    readFileSync(join(presetDir, "package.json"), "utf8"),
+  );
+
+  return join(presetDir, exports.import);
+};
 
 module.exports = {
   appName: "@prefabs.tech/tools",
   // Write a CHANGELOG.md in each package, listing only the commits that touched it
   beforeCommitChanges: ({ dir }) => {
+    const preset = resolvePreset(dir);
+
     for (const name of readdirSync(join(dir, "packages"))) {
       const packageDir = join("packages", name);
 
@@ -25,7 +47,7 @@ module.exports = {
           "exec",
           "conventional-changelog",
           "--preset",
-          "angular",
+          preset,
           "--infile",
           changelog,
           "--pkg",
