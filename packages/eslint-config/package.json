@@ -22,7 +22,7 @@
     "sort-package": "sort-package-json"
   },
   "dependencies": {
-    "@eslint-react/eslint-plugin": "5.23.3",
+    "@eslint-react/eslint-plugin": "5.23.1",
     "@eslint/js": "10.0.1",
     "eslint-config-prettier": "10.1.8",
     "eslint-import-resolver-alias": "1.1.2",

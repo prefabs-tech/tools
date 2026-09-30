@@ -2,9 +2,21 @@
 
 ## Packages
 
+## Requirements
+
+- [Node.js](https://nodejs.org/) `^22.22.2`, `^24.15.0` or `>=26` (CI runs on Node 22 and 24)
+- [pnpm](https://pnpm.io/) `12.8.1`, as pinned in the `packageManager` field of `package.json`
+- [just](https://github.com/casey/just) to run the tasks defined in the `justfile`
+
+The recommended way to get these is [mise](https://mise.jdx.dev/). The exact versions are pinned in `mise.toml`; run this from the repo root to install them:
+
+```bash
+mise install
+```
+
 ## Installation & Usage
 
-Common tasks are defined in the `justfile` and require [just](https://github.com/casey/just). Run `just` to list all available recipes.
+Run `just` to list all available recipes.
 
 ### Install dependencies
 
