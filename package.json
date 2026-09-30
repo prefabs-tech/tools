@@ -33,7 +33,7 @@
     "shipjs": "0.28.4",
     "sort-package-json": "4.0.0",
     "turbo": "2.11.5",
-    "typescript": "5.9.3"
+    "typescript": "7.0.2"
   },
   "packageManager": "pnpm@12.8.1",
   "engines": {
