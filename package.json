@@ -14,8 +14,8 @@
   },
   "scripts": {
     "build": "turbo run build",
-    "lint": "turbo run lint",
-    "lint:fix": "turbo run lint:fix",
+    "lint": "biome check .",
+    "lint:fix": "biome check --write .",
     "lint:md": "pnpm dlx prettier --write '*.md' 'docs/**/*.md' '.claude/**/*.md'",
     "prepare": "husky",
     "publish": "pnpm dlx shipjs trigger",
@@ -25,6 +25,7 @@
     "typecheck": "turbo run typecheck"
   },
   "devDependencies": {
+    "@biomejs/biome": "2.5.14",
     "@commitlint/cli": "21.2.3",
     "@commitlint/config-conventional": "21.2.3",
     "@types/node": "26.6.3",

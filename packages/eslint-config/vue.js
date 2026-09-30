@@ -5,9 +5,9 @@ import perfectionistPlugin from "eslint-plugin-perfectionist";
 import prettierPlugin from "eslint-plugin-prettier";
 import unicornPlugin from "eslint-plugin-unicorn";
 import vuePlugin from "eslint-plugin-vue";
-import vueParser from "vue-eslint-parser";
 import globals from "globals";
 import tseslint from "typescript-eslint";
+import vueParser from "vue-eslint-parser";
 
 export default [
   {
@@ -21,7 +21,7 @@ export default [
   },
   js.configs.recommended,
   ...tseslint.configs.recommended,
-  ...vuePlugin.configs['flat/recommended'],
+  ...vuePlugin.configs["flat/recommended"],
   {
     files: ["**/*.{js,ts,vue}"],
     languageOptions: {

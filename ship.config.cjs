@@ -1,9 +1,9 @@
 module.exports = {
   appName: "@prefabs.tech/tools",
-  buildCommand: ({ isYarn, version }) => {
+  buildCommand: () => {
     return "pnpm build";
   },
-  installCommand: ({ isYarn }) => {
+  installCommand: () => {
     return "pnpm -r install";
   },
   monorepo: {
@@ -11,7 +11,7 @@ module.exports = {
     packagesToBump: ["packages/*"],
     packagesToPublish: ["packages/*"],
   },
-  publishCommand: ({ isYarn, tag, defaultCommand, dir }) => {
+  publishCommand: () => {
     return "pnpm publish --access public";
   },
 };
