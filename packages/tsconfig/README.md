@@ -128,7 +128,7 @@ For detailed information about each option, see the [TypeScript TSConfig Referen
 | `jsx`                              | `preserve`   | Keeps JSX syntax as-is for processing by other tools (e.g., Babel, esbuild)              |
 | `lib`                              | `["ES2021"]` | Includes type definitions for ES2021 features                                            |
 | `module`                           | `ES2022`     | Specifies ES2022 module code generation (supports top-level await)                       |
-| `moduleResolution`                 | `Node`       | Uses Node.js-style module resolution algorithm                                           |
+| `moduleResolution`                 | `Bundler`    | Resolves modules like modern bundlers (supports `exports`, no extensions required)       |
 | `noUnusedLocals`                   | `false`      | Allows unused local variables (disabled for flexibility during development)              |
 | `noUnusedParameters`               | `false`      | Allows unused function parameters (disabled for flexibility during development)          |
 | `preserveWatchOutput`              | `true`       | Keeps previous console output when running in watch mode                                 |

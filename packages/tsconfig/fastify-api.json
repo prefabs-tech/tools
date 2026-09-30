@@ -5,7 +5,8 @@
     "declaration": false,
     "declarationMap": false,
     "lib": ["ES2021"],
-    "module": "CommonJS",
+    "module": "Node16",
+    "moduleResolution": "Node16",
     "strictNullChecks": true,
     "target": "ES2017"
   }

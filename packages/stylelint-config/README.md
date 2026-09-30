@@ -5,7 +5,7 @@ Custom stylelint configuration for CSS/SCSS linting across projects.
 ## Supported configurations:
 
 - `@prefabs.tech/stylelint-config` for CSS/SCSS linting in general projects
-- `@prefabs.tech/stylelint-config/vue` for CSS/SCSS linting in Vue projects
+- `@prefabs.tech/stylelint-config/vue.js` for CSS/SCSS linting in Vue projects
 
 ## Installation and usage
 
@@ -22,7 +22,7 @@ Custom stylelint configuration for CSS/SCSS linting across projects.
   Create a `stylelint.config.js` file:
 
   ```js
-  import stylelintConfig from "@prefabs.tech/eslint-config/stylelint.js";
+  import stylelintConfig from "@prefabs.tech/stylelint-config";
 
   export default stylelintConfig;
   ```
@@ -32,13 +32,13 @@ Custom stylelint configuration for CSS/SCSS linting across projects.
   Install dependencies:
 
   ```sh
-  npm i -D @prefabs.tech/stylelint-config stylelint stylelint-config-recommended-vue stylelint-order
+  npm i -D @prefabs.tech/stylelint-config stylelint stylelint-config-recommended-vue stylelint-config-html postcss-html stylelint-order
   ```
 
   Create a `stylelint.config.js` file:
 
   ```js
-  import stylelintConfig from "@prefabs.tech/eslint-config/stylelint-vue.js";
+  import stylelintConfig from "@prefabs.tech/stylelint-config/vue.js";
 
   export default stylelintConfig;
   ```

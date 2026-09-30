@@ -5,13 +5,6 @@
       "dependsOn": ["^build"],
       "outputs": ["dist/**"]
     },
-    "lint": {
-      "env": ["NODE_ENV"],
-      "outputs": []
-    },
-    "lint:fix": {
-      "outputs": []
-    },
     "publish": {
       "outputs": []
     },

@@ -1,10 +1,6 @@
 export default {
-  extends: [
-    "stylelint-config-standard",
-  ],
-  plugins: [
-    "stylelint-order",
-  ],
+  extends: ["stylelint-config-standard"],
+  plugins: ["stylelint-order"],
   rules: {
     "custom-property-pattern": null,
     "keyframes-name-pattern": null,

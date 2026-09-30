@@ -14,28 +14,37 @@
   },
   "scripts": {
     "build": "turbo run build",
-    "lint": "turbo run lint",
-    "lint:fix": "turbo run lint:fix",
+    "lint": "biome check .",
+    "lint:fix": "biome check --write .",
     "lint:md": "pnpm dlx prettier --write '*.md' 'docs/**/*.md' '.claude/**/*.md'",
     "prepare": "husky",
     "publish": "pnpm dlx shipjs trigger",
     "release": "pnpm dlx shipjs prepare",
-    "sort-package": "pnpm dlx sort-package-json && turbo run sort-package",
-    "test": "turbo run test --parallel",
+    "sort-package": "sort-package-json && turbo run sort-package",
+    "test": "turbo run test",
     "typecheck": "turbo run typecheck"
   },
   "devDependencies": {
-    "@commitlint/cli": "19.8.1",
-    "@commitlint/config-conventional": "19.8.1",
-    "@types/node": "22.20.1",
+    "@biomejs/biome": "2.5.14",
+    "@commitlint/cli": "21.2.3",
+    "@commitlint/config-conventional": "21.2.3",
+    "@types/node": "26.6.3",
     "husky": "9.1.7",
     "shipjs": "0.28.4",
-    "turbo": "2.10.5",
-    "typescript": "5.9.3"
+    "sort-package-json": "4.0.0",
+    "turbo": "2.11.5",
+    "typescript": "7.0.2"
   },
-  "packageManager": "pnpm@10.13.1",
+  "packageManager": "pnpm@12.8.1",
   "engines": {
-    "node": ">=20",
-    "pnpm": ">=9"
+    "node": ">=24",
+    "pnpm": ">=12"
+  },
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "12.8.1",
+      "onFail": "download"
+    }
   }
 }

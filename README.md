@@ -2,32 +2,46 @@
 
 ## Packages
 
+## Requirements
+
+- [Node.js](https://nodejs.org/) `>=24` for development (24.15.0 or later on the 24.x line). The published packages support Node 22 and later; CI tests on Node 22, 24 and 26.
+- [pnpm](https://pnpm.io/) `12.8.1`, as pinned in the `packageManager` field of `package.json`
+- [just](https://github.com/casey/just) to run the tasks defined in the `justfile`
+
+The recommended way to get these is [mise](https://mise.jdx.dev/). The exact versions are pinned in `mise.toml`; run this from the repo root to install them:
+
+```bash
+mise install
+```
+
 ## Installation & Usage
+
+Run `just` to list all available recipes.
 
 ### Install dependencies
 
 Install dependencies recursively with this command
 
 ```bash
-make install
+just install
 ```
 
 ### Lint code
 
 ```bash
-make lint
+just lint
 ```
 
 ### Typecheck code
 
 ```bash
-make typecheck
+just typecheck
 ```
 
 ### Test
 
 ```bash
-make test
+just test
 ```
 
 ## Developing locally & testing

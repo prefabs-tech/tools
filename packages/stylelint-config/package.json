@@ -9,28 +9,38 @@
     "directory": "packages/stylelint-config"
   },
   "license": "MIT",
-  "main": "index.js",
   "type": "module",
+  "main": "index.js",
   "files": [
     "index.js",
     "vue.js"
   ],
   "scripts": {
-    "sort-package": "pnpm dlx sort-package-json"
+    "sort-package": "sort-package-json"
   },
   "devDependencies": {
-    "stylelint": "17.14.0",
-    "stylelint-config-recommended-vue": "1.6.1",
+    "postcss-html": "2.0.0",
+    "stylelint": "17.15.0",
+    "stylelint-config-html": "2.0.0",
+    "stylelint-config-recommended-vue": "2.0.0",
     "stylelint-config-standard": "40.0.0",
     "stylelint-order": "8.1.1"
   },
   "peerDependencies": {
+    "postcss-html": ">=2.0.0",
     "stylelint": ">=17.14.0",
+    "stylelint-config-html": ">=2.0.0",
     "stylelint-config-recommended-vue": ">=1.6.1",
     "stylelint-config-standard": ">=40.0.0",
     "stylelint-order": ">=8.1.1"
   },
   "peerDependenciesMeta": {
+    "postcss-html": {
+      "optional": true
+    },
+    "stylelint-config-html": {
+      "optional": true
+    },
     "stylelint-config-recommended-vue": {
       "optional": true
     },
@@ -40,6 +50,9 @@
     "stylelint-order": {
       "optional": true
     }
+  },
+  "engines": {
+    "node": ">=22.12.0"
   },
   "publishConfig": {
     "access": "public"
