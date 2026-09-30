@@ -38,5 +38,12 @@
   "engines": {
     "node": ">=20",
     "pnpm": ">=9"
+  },
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "12.8.1",
+      "onFail": "download"
+    }
   }
 }
