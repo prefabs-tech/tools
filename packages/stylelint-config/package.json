@@ -9,14 +9,14 @@
     "directory": "packages/stylelint-config"
   },
   "license": "MIT",
-  "main": "index.js",
   "type": "module",
+  "main": "index.js",
   "files": [
     "index.js",
     "vue.js"
   ],
   "scripts": {
-    "sort-package": "pnpm dlx sort-package-json"
+    "sort-package": "sort-package-json"
   },
   "devDependencies": {
     "stylelint": "17.14.0",

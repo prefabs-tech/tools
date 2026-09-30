@@ -20,7 +20,7 @@
     "prepare": "husky",
     "publish": "pnpm dlx shipjs trigger",
     "release": "pnpm dlx shipjs prepare",
-    "sort-package": "pnpm dlx sort-package-json && turbo run sort-package",
+    "sort-package": "sort-package-json && turbo run sort-package",
     "test": "turbo run test",
     "typecheck": "turbo run typecheck"
   },
@@ -30,6 +30,7 @@
     "@types/node": "26.6.3",
     "husky": "9.1.7",
     "shipjs": "0.28.4",
+    "sort-package-json": "4.0.0",
     "turbo": "2.11.5",
     "typescript": "5.9.3"
   },

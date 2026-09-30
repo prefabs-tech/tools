@@ -19,6 +19,9 @@
     "vue.json",
     "vue-app.json"
   ],
+  "scripts": {
+    "sort-package": "sort-package-json"
+  },
   "publishConfig": {
     "access": "public"
   }

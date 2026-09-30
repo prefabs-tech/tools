@@ -1,5 +1,6 @@
 export PATH="$HOME/.config/local/share/mise/shims:$PATH"
 
+pnpm sort-package-json --check package.json "packages/*/package.json"
 pnpm lint
 pnpm typecheck
 pnpm test

@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [20, 22, 24]
+        node-version: [22, 24]
     steps:
       - name: Checkout
         uses: actions/checkout@v7
@@ -21,6 +21,12 @@ jobs:
           cache: "pnpm"
       - name: Install dependencies
         run: pnpm install --frozen-lockfile --strict-peer-dependencies
+      - name: Check package.json sorting
+        run: pnpm sort-package-json --check package.json "packages/*/package.json"
+      - name: Lint
+        run: pnpm lint
+      - name: Typecheck
+        run: pnpm typecheck
       - name: Build packages
         run: pnpm build
       - name: Run tests
