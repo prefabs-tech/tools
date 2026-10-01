@@ -290,7 +290,7 @@ importers:
   packages/utilities:
     devDependencies:
       '@prefabs.tech/tsconfig':
-        specifier: 0.8.7
+        specifier: 0.9.0
         version: link:../tsconfig
       '@types/node':
         specifier: 26.6.3
