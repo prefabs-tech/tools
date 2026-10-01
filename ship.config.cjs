@@ -58,6 +58,14 @@ module.exports = {
         { cwd: dir, stdio: "inherit" },
       );
     }
+
+    // shipjs rewrites the package.json files with its own formatting; normalize
+    // them so the release commit passes the pre-commit sort check
+    execFileSync(
+      "pnpm",
+      ["exec", "sort-package-json", "package.json", "packages/*/package.json"],
+      { cwd: dir, stdio: "inherit" },
+    );
   },
   buildCommand: () => {
     return "pnpm build";
