@@ -4,8 +4,3 @@ allowBuilds:
   unrs-resolver: false
 autoInstallPeers: false
 linkWorkspacePackages: true
-# Deprecated subdependencies of shipjs (no replacement versions exist)
-allowedDeprecatedVersions:
-  conventional-changelog-core: 9.0.0
-  git-raw-commits: 5.0.1
-  git-semver-tags: 8.0.1

@@ -1,0 +1,160 @@
+name: Release
+
+# Releases one package per tag. Push a tag named <package>/v<semver>, where
+# <package> is a directory under packages/, e.g. eslint-config/v1.2.3:
+#
+#   git tag eslint-config/v1.2.3 origin/main && git push origin eslint-config/v1.2.3
+#
+# (or `just release eslint-config 1.2.3`, or create the tag in a GitHub release).
+# The tagged commit must be on main. The workflow publishes the package as it is
+# at the tag, creates the GitHub release, and commits the version bump and
+# changelogs to main. Re-running it after a partial failure is safe.
+
+on:
+  push:
+    tags:
+      - "*/v[0-9]*.[0-9]*.[0-9]*"
+
+permissions:
+  contents: write
+
+# One release at a time, so the commits to main never race each other
+concurrency:
+  group: release
+  cancel-in-progress: false
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    env:
+      HUSKY: 0
+      TAG: ${{ github.ref_name }}
+    steps:
+      - name: Checkout the tagged commit
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - name: Parse and validate the tag
+        id: tag
+        run: |
+          if [[ ! "$TAG" =~ ^([a-z0-9][a-z0-9-]*)/v([0-9]+\.[0-9]+\.[0-9]+(-[0-9A-Za-z.-]+)?)$ ]]; then
+            echo "::error::Tag '$TAG' must be <package>/v<semver>, e.g. eslint-config/v1.2.3"
+            exit 1
+          fi
+          package="${BASH_REMATCH[1]}"
+          version="${BASH_REMATCH[2]}"
+
+          if [ ! -f "packages/$package/package.json" ]; then
+            echo "::error::No package at packages/$package (parsed from tag '$TAG')"
+            exit 1
+          fi
+
+          if ! git merge-base --is-ancestor "$GITHUB_SHA" origin/main; then
+            echo "::error::Tag '$TAG' points to $GITHUB_SHA, which is not on main"
+            exit 1
+          fi
+
+          {
+            echo "package=$package"
+            echo "version=$version"
+            echo "name=$(node -p "require('./packages/$package/package.json').name")"
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v6
+
+      - name: Setup node 24
+        uses: actions/setup-node@v6
+        with:
+          node-version: 24
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile --strict-peer-dependencies
+
+      - name: Set the version and write the changelogs
+        env:
+          PACKAGE: ${{ steps.tag.outputs.package }}
+          VERSION: ${{ steps.tag.outputs.version }}
+        run: node scripts/release.mjs "$PACKAGE" "$VERSION" --notes "$RUNNER_TEMP/notes.md"
+
+      - name: Build and test
+        env:
+          PACKAGE: ${{ steps.tag.outputs.package }}
+        run: |
+          pnpm --filter "./packages/$PACKAGE" run --if-present build
+          pnpm --filter "./packages/$PACKAGE" run --if-present test
+
+      - name: Publish to npm
+        env:
+          NAME: ${{ steps.tag.outputs.name }}
+          NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+          PACKAGE: ${{ steps.tag.outputs.package }}
+          VERSION: ${{ steps.tag.outputs.version }}
+        run: |
+          if [ -n "$(npm view "$NAME@$VERSION" version 2>/dev/null)" ]; then
+            echo "$NAME@$VERSION is already on npm, skipping"
+            exit 0
+          fi
+
+          # The token stays in the environment; only the reference is written
+          echo '//registry.npmjs.org/:_authToken=${NPM_AUTH_TOKEN}' > ~/.npmrc
+
+          # Pre-releases (e.g. 1.2.3-beta.1) don't become "latest"
+          dist_tag=latest
+          [[ "$VERSION" == *-* ]] && dist_tag=next
+
+          cd "packages/$PACKAGE"
+          pnpm publish --access public --no-git-checks --tag "$dist_tag"
+
+      - name: Create the GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          NAME: ${{ steps.tag.outputs.name }}
+          VERSION: ${{ steps.tag.outputs.version }}
+        run: |
+          notes="$RUNNER_TEMP/notes.md"
+
+          if gh release view "$TAG" >/dev/null 2>&1; then
+            # Created along with the tag in the GitHub UI: fill in the notes
+            # only if none were written there
+            if [ -z "$(gh release view "$TAG" --json body --jq .body)" ]; then
+              gh release edit "$TAG" --notes-file "$notes"
+            fi
+          else
+            prerelease=()
+            [[ "$VERSION" == *-* ]] && prerelease=(--prerelease)
+            gh release create "$TAG" --verify-tag --title "$NAME $VERSION" \
+              --notes-file "$notes" "${prerelease[@]}"
+          fi
+
+      - name: Commit the version and changelogs to main
+        env:
+          NAME: ${{ steps.tag.outputs.name }}
+          PACKAGE: ${{ steps.tag.outputs.package }}
+          VERSION: ${{ steps.tag.outputs.version }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          # Redo the same changes on top of the latest main (it may have moved
+          # since the tag), still only listing commits up to the tag
+          git reset -q --hard
+          git clean -fdq
+          git checkout -q -B main origin/main
+          node scripts/release.mjs "$PACKAGE" "$VERSION" --to "$GITHUB_SHA"
+
+          git add CHANGELOG.md "packages/$PACKAGE"
+          if git diff --cached --quiet; then
+            echo "main already has $NAME $VERSION"
+            exit 0
+          fi
+          git commit -q -m "chore(release): $NAME $VERSION"
+
+          for attempt in 1 2 3; do
+            git push -q origin main && exit 0
+            git pull -q --rebase origin main
+          done
+          echo "::error::Could not push the release commit to main"
+          exit 1
