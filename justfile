@@ -27,16 +27,12 @@ outdated:
     @printf "\033[0;32m>>> Check for outdated dependencies\033[0m\n"
     pnpm -r outdated
 
-# Publish packages
-publish:
-    @printf "\033[0;32m>>> Publish packages\033[0m\n"
-    pnpm run publish
-
-# Prepare packages for release
-release:
-    @printf "\033[0;32m>>> Prepare packages for release\033[0m\n"
-    @git remote remove origin-with-token 2>/dev/null || true
-    pnpm release
+# Release a package by tagging origin/main as <package>/v<version>, e.g. `just release eslint-config 1.2.3`
+release package version:
+    @printf "\033[0;32m>>> Release {{ package }} {{ version }}\033[0m\n"
+    git fetch -q origin main
+    git tag "{{ package }}/v{{ version }}" origin/main
+    git push origin "{{ package }}/v{{ version }}"
 
 # Sort package.json files
 sort-package:
