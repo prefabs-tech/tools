@@ -1,3 +1,5 @@
+## @prefabs.tech/utilities [0.9.1](https://github.com/prefabs-tech/tools/compare/utilities%2Fv0.9.1...utilities%2Fv0.9.1) (2026-10-05)
+
 ## @prefabs.tech/tsconfig [0.9.1](https://github.com/prefabs-tech/tools/compare/tsconfig%2Fv0.9.1...tsconfig%2Fv0.9.1) (2026-10-05)
 
 ## @prefabs.tech/stylelint-config [0.9.1](https://github.com/prefabs-tech/tools/compare/stylelint-config%2Fv0.9.1...stylelint-config%2Fv0.9.1) (2026-10-05)
