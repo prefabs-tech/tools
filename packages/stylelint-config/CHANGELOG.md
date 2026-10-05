@@ -1,3 +1,5 @@
+## [0.9.1](https://github.com/prefabs-tech/tools/compare/stylelint-config%2Fv0.9.1...stylelint-config%2Fv0.9.1) (2026-10-05)
+
 # [0.9.0](https://github.com/prefabs-tech/tools/compare/v0.8.7...v0.9.0) (2026-10-01)
 
 ### Breaking Changes

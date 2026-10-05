@@ -1,3 +1,5 @@
+## @prefabs.tech/stylelint-config [0.9.1](https://github.com/prefabs-tech/tools/compare/stylelint-config%2Fv0.9.1...stylelint-config%2Fv0.9.1) (2026-10-05)
+
 ## @prefabs.tech/eslint-config [0.10.1](https://github.com/prefabs-tech/tools/compare/eslint-config%2Fv0.10.1...eslint-config%2Fv0.10.1) (2026-10-05)
 
 # @prefabs.tech/eslint-config [0.10.0](https://github.com/prefabs-tech/tools/compare/eslint-config%2Fv0.10.0...eslint-config%2Fv0.10.0) (2026-10-05)
