@@ -11,9 +11,11 @@
 //   --notes    also write the new changelog entry to this file
 //
 // Commits are taken from the package's previous "<package>/v*" tag (or the last
-// shared "v*" tag from before per-package releases) up to --to, and only those
-// touching packages/<package>. Running it again for a version the package
-// already has is a no-op, so it is safe to re-run.
+// shared "v*" tag from before per-package releases, or else from the first
+// commit) up to --to, and only those touching packages/<package>. The tag of the
+// release being made is ignored, since it already points to --to. Running it
+// again for a version the package already has is a no-op, so it is safe to
+// re-run.
 
 import { execFileSync } from "node:child_process";
 import {
@@ -87,12 +89,23 @@ const resolvePreset = () => {
   return join(presetDir, exports.import);
 };
 
-// Most recent tag reachable from `to` matching `pattern`, if any
-const previousTag = (pattern, to) => {
+// Most recent tag reachable from `to` matching `pattern`, other than `exclude`,
+// if any. The tag being released points to `to` itself, and would otherwise be
+// found first, leaving an empty range of commits.
+const previousTag = (pattern, exclude, to) => {
   try {
     return run(
       "git",
-      ["describe", "--tags", "--abbrev=0", "--match", pattern, to],
+      [
+        "describe",
+        "--tags",
+        "--abbrev=0",
+        "--match",
+        pattern,
+        "--exclude",
+        exclude,
+        to,
+      ],
       "ignore",
     );
   } catch {
@@ -148,8 +161,36 @@ if (compareVersions(version, manifest.version) <= 0) {
 }
 
 const tagPrefix = `${name}/v`;
+const tag = `${tagPrefix}${version}`;
 const from =
-  previousTag(`${tagPrefix}*`, values.to) ?? previousTag("v*", values.to);
+  previousTag(`${tagPrefix}*`, tag, values.to) ??
+  previousTag("v*", tag, values.to);
+
+// Whether the release's own tag exists yet: it does in the workflow, not when
+// previewing locally
+const tagExists = (() => {
+  try {
+    run(
+      "git",
+      ["rev-parse", "--quiet", "--verify", `refs/tags/${tag}`],
+      "ignore",
+    );
+    return true;
+  } catch {
+    return false;
+  }
+})();
+
+// Which commits conventional-changelog puts in the entry:
+// - no previous tag at all: all of them (--first-release)
+// - otherwise, those since the previous tag. If the release's tag exists, they
+//   form a release of their own, and conventional-changelog would add an empty
+//   "unreleased" entry above it, as it doesn't apply the tag prefix when
+//   checking whether the version is tagged; --no-output-unreleased drops it.
+//   Without the tag, they are the unreleased entry, which must be kept.
+const rangeArgs = from
+  ? ["--from", from, ...(tagExists ? ["--no-output-unreleased"] : [])]
+  : ["--first-release"];
 
 // Set the version, keeping the file's formatting otherwise
 writeFileSync(
@@ -161,14 +202,15 @@ writeFileSync(
 );
 
 // The preset only finds the previous tag among "<package>/v*" tags, so pass both
-// tags explicitly for the compare link (the first release starts from a "v*" tag)
+// tags explicitly for the compare link (a package's first release starts from a
+// "v*" tag; there is no link without any previous tag)
 const contextDir = mkdtempSync(join(tmpdir(), "release-"));
 const contextPath = join(contextDir, "context.json");
 
 writeFileSync(
   contextPath,
   JSON.stringify({
-    currentTag: `${tagPrefix}${version}`,
+    currentTag: tag,
     linkCompare: Boolean(from),
     previousTag: from,
   }),
@@ -190,7 +232,7 @@ const entry = run(
     packageDir,
     "--tag-prefix",
     tagPrefix,
-    ...(from ? ["--from", from] : []),
+    ...rangeArgs,
     "--to",
     values.to,
     "--stdout",
