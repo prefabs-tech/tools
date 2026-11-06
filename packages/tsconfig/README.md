@@ -28,6 +28,8 @@ In the root directory of your project, create or update a `tsconfig.json` file t
   }
   ```
 
+  `fastify.json` sets `module` and `moduleResolution` to `NodeNext`, because Node loads fastify libraries directly, not through a bundler. In a `"type": "module"` package, relative imports need a `.js` extension (`from "./plugin.js"`), and deep imports into packages without an `exports` map need the file name (`from "supertokens-node/recipe/session/index.js"`). The declaration files you ship then resolve for consumers on any `moduleResolution`.
+
 - For fastify apis:
   ```json
   {
