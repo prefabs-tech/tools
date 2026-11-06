@@ -168,31 +168,12 @@ const from =
   previousTag(`${tagPrefix}*`, tag, values.to) ??
   previousTag("v*", tag, values.to);
 
-// Whether the release's own tag exists yet: it does in the workflow, not when
-// previewing locally
-const tagExists = (() => {
-  try {
-    run(
-      "git",
-      ["rev-parse", "--quiet", "--verify", `refs/tags/${tag}`],
-      "ignore",
-    );
-    return true;
-  } catch {
-    return false;
-  }
-})();
-
-// Which commits conventional-changelog puts in the entry:
-// - no previous tag at all: all of them (--first-release)
-// - otherwise, those since the previous tag. If the release's tag exists, they
-//   form a release of their own, and conventional-changelog would add an empty
-//   "unreleased" entry above it, as it doesn't apply the tag prefix when
-//   checking whether the version is tagged; --no-output-unreleased drops it.
-//   Without the tag, they are the unreleased entry, which must be kept.
-const rangeArgs = from
-  ? ["--from", from, ...(tagExists ? ["--no-output-unreleased"] : [])]
-  : ["--first-release"];
+// Which commits conventional-changelog puts in the entry: all of them if there
+// is no previous tag at all, otherwise those since the previous tag. They are
+// output as the entry whether or not the release's own tag exists yet (it does
+// in the workflow, not when previewing locally); --no-output-unreleased would
+// drop them when it does.
+const rangeArgs = from ? ["--from", from] : ["--first-release"];
 
 // Set the version, keeping the file's formatting otherwise
 writeFileSync(

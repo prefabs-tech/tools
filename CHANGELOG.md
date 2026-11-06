@@ -1,4 +1,12 @@
+## @prefabs.tech/tsconfig [0.10.0](https://github.com/prefabs-tech/tools/compare/tsconfig%2Fv0.9.1...tsconfig%2Fv0.10.0) (2026-11-06)
 
+### ⚠ BREAKING CHANGES
+
+* **tsconfig:** use NodeNext module resolution for fastify libraries ([#69](https://github.com/prefabs-tech/tools/issues/69))
+
+### Features
+
+* **tsconfig:** use NodeNext module resolution for fastify libraries ([#69](https://github.com/prefabs-tech/tools/issues/69)) ([5d97b79](https://github.com/prefabs-tech/tools/commit/5d97b798ba75dfed6f50c27f8e96fb32b0d25c1c))
 
 ## @prefabs.tech/utilities [0.9.1](https://github.com/prefabs-tech/tools/compare/utilities%2Fv0.9.1...utilities%2Fv0.9.1) (2026-10-05)
 
