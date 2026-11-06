@@ -9,6 +9,9 @@ name: Release
 # The tagged commit must be on main. The workflow publishes the package as it is
 # at the tag, creates the GitHub release, and commits the version bump and
 # changelogs to main. Re-running it after a partial failure is safe.
+#
+# Publishing uses npm trusted publishing: the package must already exist on npm
+# and have this workflow (release.yml) set as its trusted publisher.
 
 on:
   push:
@@ -17,6 +20,8 @@ on:
 
 permissions:
   contents: write
+  # Lets npm trusted publishing authenticate the workflow with an OIDC token
+  id-token: write
 
 # One release at a time, so the commits to main never race each other
 concurrency:
@@ -89,7 +94,6 @@ jobs:
       - name: Publish to npm
         env:
           NAME: ${{ steps.tag.outputs.name }}
-          NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
           PACKAGE: ${{ steps.tag.outputs.package }}
           VERSION: ${{ steps.tag.outputs.version }}
         run: |
@@ -98,13 +102,12 @@ jobs:
             exit 0
           fi
 
-          # The token stays in the environment; only the reference is written
-          echo '//registry.npmjs.org/:_authToken=${NPM_AUTH_TOKEN}' > ~/.npmrc
-
           # Pre-releases (e.g. 1.2.3-beta.1) don't become "latest"
           dist_tag=latest
           [[ "$VERSION" == *-* ]] && dist_tag=next
 
+          # Authenticates with npm trusted publishing (OIDC, through the
+          # id-token permission above), so no npm token is needed
           cd "packages/$PACKAGE"
           pnpm publish --access public --no-git-checks --tag "$dist_tag"
 
