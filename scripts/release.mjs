@@ -76,11 +76,13 @@ const compareVersions = (a, b) => {
   return pa[3].localeCompare(pb[3], "en", { numeric: true });
 };
 
-// Absolute path to the angular preset pinned in the root package.json. By name,
-// conventional-changelog may load whichever version pnpm hoisted.
+// Absolute path to the conventionalcommits preset pinned in the root
+// package.json. By name, conventional-changelog may load whichever version pnpm
+// hoisted. Unlike the angular preset, it reads breaking changes marked with "!"
+// in the header (e.g. "feat(tsconfig)!: ..."), as commitlint allows.
 const resolvePreset = () => {
   const presetDir = realpathSync(
-    join(root, "node_modules", "conventional-changelog-angular"),
+    join(root, "node_modules", "conventional-changelog-conventionalcommits"),
   );
   const { exports } = JSON.parse(
     readFileSync(join(presetDir, "package.json"), "utf8"),
